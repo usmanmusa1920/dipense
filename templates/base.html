@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'base.css' %}">
+  <script src="{% static 'base.js' %}"></script>
+  <title>
+    DiPense | 
+    {% block title %}
+      <!-- inheritance -->
+    {% endblock title %}
+  </title>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <a onclick="setTimeout(hideMenu, 300)">
+        <h3 class="hidemenu">
+          <span>&times;</span>
+        </h3>
+      </a>
+      <a onclick="setTimeout(showMenu, 300)">
+        <h1 class="dash">
+          <span>Dash board</span>
+        </h1>
+      </a>
+      <div class="d_links">
+        <a href="{% url 'home' %}"><p>DiPense</p></a>
+        <a href="{% url 'simtrack' %}"><p>Sim track</p></a>
+        <a href="{% url 'icheckp' %}"><p>i-check-p</p></a>
+        <a href="{% url 'contact' %}"><p>Contact Us</p></a>
+        <a href="{% url 'about' %}"><p>About</p></a>
+        {% if request.user.is_authenticated %}
+          <a href="/7ecf9a02ee68bcbc266ec5261d2f8d83d92dd61b4a646abc6df49b28e7af/"><p>Admin</p></a>
+          <a href="{% url 'logout' %}"><p>Logout</p></a>
+        {% else %}
+          <!-- <a href="{% url 'login' %}"><p>Login</p></a> -->
+        {% endif %}
+      </div>
+      {% if request.user.is_authenticated %}
+        <a class="n_msg">
+          <h3>
+            <span>{{msg.count}}</span>
+          </h3> 
+          {% if msg.count > 1 %}
+            messages
+          {% else %}
+            message
+          {% endif %}
+        </a>
+      {% endif %}
+
+      <div class="bot">
+        <div>
+          <b>25%</b>
+        </div>
+        <button>Malware</button>
+      </div>
+      <div class="bot_2">
+        <div>
+          <b>75%</b>
+        </div>
+        <button>Threats</button>
+      </div>
+      <p class="foot">&copy; {{the_year}} DiPense</p>
+      <p class="foot">Powered by <a href="https://www.usmanmusa.tk" target="_blank"  class="dash">Usman Musa</a></p>
+    </div>
+
+    <div class="right">
+      <div class="header">
+        <div class="header_column">
+          <div class="header_left">
+            <a onclick="setTimeout(showMenu, 300)">
+              <h1 class="showmenu">
+                <span>D</span>
+              </h1>
+            </a>
+            <a href="{% url 'home' %}">
+              <h1 class="h_2">
+                iPense
+              </h1>
+            </a>
+          </div>
+          <div class="header_right">
+            <a href="{% url 'about' %}"><h4>About</h4></a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main">
+        <div class="main_column">
+          <div class="main_top">
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert">{{message}}</div>
+              {% endfor %}
+            {% endif %}
+            {% block main_top %}
+              <!-- inheritance -->
+            {% endblock main_top %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

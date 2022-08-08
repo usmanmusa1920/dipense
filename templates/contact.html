@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  contact
+{% endblock title %}
+
+
+{% block main_top %}
+  <h2>Send a message to DiPense community</h2>
+  <form action="{% url 'message' %}" method="post" class="form_2">
+    {% csrf_token %}
+    <input type="email" name="email" placeholder="Your email addres" required>
+    <textarea name="text_body" id="" placeholder="Your message..." cols="30" rows="10" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+
+  <div class="result">
+    <p><b>Give away</b> Hey you anonymous! any complaint that you have to, feel free to deliver to us or something you found which is not support to be also feel free to get it to us, we will response at the earliest. Our mission is to make IT more enthusiastic and more funny to IT ally</p>
+  </div>
+  {% if request.user.is_authenticated %}
+    {% if payloads %}
+      {% if payloads.count > 1 %}
+        <h1>There are {{payloads.count}} unseen payloads:</h1>
+        <a class="mess" href="#">Mark all payloads as seen</a>
+      {% else %}
+        <h1>There are only one payload:</h1>
+      {% endif %}
+    {% endif %}
+    {% for payload in payloads %}
+      <div class="result">
+        <a class="mess" href="#">Mark payload as seen</a>
+        <a class="mess" href="#">Delete payload</a>
+        <p>|</p>
+        <p><b>Payloaded number: </b>{{payload.payload_num}}</p>
+        <p><b>Date: </b><small>{{payload.timestamp}}</small></p>
+        <p><b>Is seen: </b>{{payload.is_seen}}</p>
+      </div>
+    {% endfor %}
+
+    <br>
+
+    {% if msg %}
+      {% if msg.count > 1 %}
+        <h1>There are {{msg.count}} unread messages:</h1>
+        <a class="mess" href="{% url 'mark_messages' %}">Mark all messages as read</a>
+      {% else %}
+        <h1>There are only one message:</h1>
+      {% endif %}
+    {% endif %}
+    {% for message in msg %}
+      <div class="result">
+        <a class="mess" href="{% url 'mark_message' message.id %}">Mark message as read</a>
+        <p>|</p>
+        <p><b>Email: </b>{{message.email}}</p>
+        <p><b>Date: </b><small>{{message.timestamp}}</small></p>
+        <p><b>Text body: </b>{{message.text_body}}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endblock main_top %}

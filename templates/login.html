@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  i-check-p
+{% endblock title %}
+
+{% block main_top %}
+  <div class="result">
+    <p>Login to dipense community now!</p>
+  </div>
+  <form method="POST" class="form">
+    {% csrf_token %}
+    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="255" required id="id_username" placeholder="Email addres">
+    <input type="password" name="password" autocomplete="current-password" required id="id_password" placeholder="Password">
+    {% if form.errors %}
+      <div class="l_error">
+        <ul>Please enter a correct phone number and password. Note that both fields may be case-sensitive.</ul>
+      </div>
+    {% endif %}
+    <button type="submit">Login</button>
+  </form>
+{% endblock main_top %}

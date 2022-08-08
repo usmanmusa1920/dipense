@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  DiPense
+{% endblock title %}
+
+
+{% block main_top %}
+  <h2>How me DiPense</h2>
+  <div class="result_2">
+    <p><strong><i>*** Welcome to DiPense ***</i></strong> an OSINT framework for tracking phone number and IP adress. DiPense system do not take any of your information or data in any way or the other, to find or find some information and retrieve in any way illegally without the permission of the owner.</p>
+  </div>
+
+  <div class="box">
+    <div class="div_1">
+      <div class="circ">
+        <b>50%</b>
+      </div>
+      <a href="{% url  'icheckp' %}"><button>Scan ip address</button></a>
+    </div>
+    <div class="div_2">
+      Smash and capture the flag
+      <a href="{% url  'simtrack' %}"><button>Num payload</button></a>
+    </div>
+  </div>
+
+  <div class="result">
+    <li><b>Give away</b> Hey you anonymous!, mass scan is a portion of the end result, that will give a reference and some links that are/may be associated with the cellular number was payloaded into DiPense system.</li>
+    <br>
+    <h3>Local scan</h3>
+    <p>It (local scan) is a portion (out come) of your payload, which will give a local format of the number that payloaded into the system, without showing the plus sign (+) i.e negating it unlike in internationall format.</</p>
+  </div>
+
+  <div class="result_2">
+    <a href="{% url  'about' %}"><button type="button">About</button></a>
+    <p>DiPense is an OSINT framework that was design for hackers, to be able to detect and track a cellular number and a foot print belongs to the number also an ip address. Although using this tool may lead to data breach or illegal at all at some certain circumstance depending on the use cases</p>
+    <a href="{% url  'contact' %}"><button type="button">Contact Us</button></a>
+    <p><b>Give away</b> Hey you anonymous! any complaint that you have to, feel free to deliver to us or something you found which is not support to be, also feel free to get it to us, we will response at the earliest. Our mission is to make IT more enthusiastic and more fun to IT ally</p>
+  </div>
+{% endblock main_top %}

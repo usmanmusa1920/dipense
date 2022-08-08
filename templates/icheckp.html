@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  i-check-p
+{% endblock title %}
+
+{% block main_top %}
+  <h2>Payload and track an iP address</h2>
+  <form action="{% url 'icheckp' %}" class="form">
+    <p>To track your own ip address put "me" inside the input below, and run payloade</p>
+    <input type="text" name="ip_num" placeholder="Enter ip address 198.168.57.01" oninput="searchPlus()" required>
+    <button type="submit">Run payload</button>
+  </form>
+
+  <div class="result">
+    {% if d_location %}
+      <p class="ref">New browser window or tab will be open soon! to show you the location visually on map</p>
+      <h3>GPS coordinates:</h3>
+      <li><b>Coordinates</b>: {{d_location}}</li>
+      <li><b>Latitude</b>: {{d_latitude}}</li>
+      <li><b>Longitude</b>: {{d_longitude}}</li>
+      <br>
+    {% else %}
+      <!-- <a class="map">Unknown ip address</a> -->
+    {% endif %}
+    
+    {% if cty %}
+      <li>City: {{cty}}</li>
+    {% endif %}
+
+    {% if stt %}
+      <li>State: {{stt}}</li>
+    {% endif %}
+
+    {% if ctry %}
+      <li>Country code: {{ctry}}</li>
+    {% endif %}
+
+    {% if time_zone %}
+      <li>Timezone: {{time_zone}}</li>
+    {% endif %}
+
+    {% if cty %}
+      <li>
+        Locate ({{cty}}) on google map: <a href="https://www.google.nl/maps/place/{{cty}}/&amp;" target="_blank">Find <span class="red">{{cty}}</span> location</a>
+      </li>
+    {% endif %}
+      
+    <p>Payload an ip address to track and find some foot print as well as some info regarding to the ip address.</p>
+  </div>
+{% endblock main_top %}

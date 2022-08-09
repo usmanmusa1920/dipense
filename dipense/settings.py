@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-import django_on_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,15 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-!w6s6!a^thb^s0iqe(-h*uj+s0_ml76hf2-g7d9br1q(0-asuy'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-!w6s6!a^thb^s0iqe(-h*uj+s0_ml76hf2-g7d9br1q(0-asuy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = True
 
-ALLOWED_HOSTS = ['dipense.herokuapp.com', 'dipense.usmanmusa.tk']
-CSRF_TRUSTED_ORIGINS = ['https://*.dipense.herokuapp.com', 'https://*dipense.usmanmusa.tk']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -141,5 +137,3 @@ LOGIN_REDIRECT_URL = 'home'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-django_on_heroku.settings(locals())

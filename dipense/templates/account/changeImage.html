@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  <title>DiPense | changee image</title>
+{% endblock title %}
+
+
+{% block form %}
+  <h1>Change your mask!</h1>
+  <form method="POST" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image" accept="image/*" id="id_image" required>
+    {% if form.image.errors %}
+      <p><i><strong><small>--- {{form.image.errors}}</small></strong></i></p>
+    {% endif %}
+    <button type="submit">change</button>
+
+  </form>
+{% endblock form %}
+
+
+{% block result %}
+  <span>
+    <p>Stay in mask!</p>
+  </span>
+{% endblock result %}

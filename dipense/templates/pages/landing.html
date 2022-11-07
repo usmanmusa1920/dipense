@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  <title>DiPense</title>
+{% endblock title %}
+
+
+{% block form %}
+  <h1>How me DiPense</h1>
+  <p><strong><i>*** Welcome to DiPense ***</i></strong> an OSINT framework for tracking phone number, IP adress and much more. DiPense system do not take any of your information or data in any way or the other, to find or find some information and retrieve in any way illegally without the permission of the owner.</p>
+
+  {% if request.user.is_authenticated %}
+    <!-- pass -->
+  {% else %}
+    <p>
+      <b>Default</b> login credentials
+      <br>
+      <b>Email:</b> anonymous@mail.com
+      <br>
+      <b>password:</b> root
+    </p>
+
+    <h1>You must login first <a href="{% url 'account:auth:login' %}" class="peace">login</a></h1>
+    <h1>OR <a href="{% url 'account:signup' %}" class="peace">signup</a></h1>
+  {% endif %}
+
+  <p>We do enhance foot print of a phone number belongs to also an ip address. Although using this tool may or may not be illegal at some certain circumstance depending on the use cases.</p>
+  
+  <p><b>Give away</b> Hey you anonymous!, mass scan is a portion of the end result, that will give a reference and some links that are/may be associated with the cellular number was payloaded into DiPense system.</p>
+  
+  <h3>Local scan</h3>
+  <p>It (local scan) is a portion (out come) of your payload, which will give a local format of the number that payloaded into the system, without showing the plus sign (+) i.e negating it unlike in internationall format.</</p>
+{% endblock form %}
+
+{% block result %}
+  <span>
+    <pre><code>
+      >>> import this
+      The Zen of Python, by Tim Peters
+      
+      Beautiful is better than ugly.
+      Explicit is better than implicit.
+      Simple is better than complex.
+      Complex is better than complicated.
+      Flat is better than nested.
+      Sparse is better than dense.
+      Readability counts.
+      Special cases aren't special enough to break the rules.
+      Although practicality beats purity.
+      Errors should never pass silently.
+      Unless explicitly silenced.
+      In the face of ambiguity, refuse the temptation to guess.
+      There should be one-- and preferably only one --obvious way to do it.
+      Although that way may not be obvious at first unless you're Dutch.
+      Now is better than never.
+      Although never is often better than *right* now.
+      If the implementation is hard to explain, it's a bad idea.
+      If the implementation is easy to explain, it may be a good idea.
+      Namespaces are one honking great idea -- let's do more of those!</code></pre>
+  </span>
+  
+  <span>
+    <p><b>INFO !!!!!!</b> Hey you anonymous! any complaint that you have to, feel free to deliver to us or something you found which is not support to be, also feel free to get it to us, we will response at the earliest. Our mission is to make IT more enthusiastic and more fun to IT ally</p>
+  </span>
+{% endblock result %}

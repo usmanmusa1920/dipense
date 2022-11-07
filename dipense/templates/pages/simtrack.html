@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  <title>DiPense | simtrack</title>
+{% endblock title %}
+
+
+{% block form %}
+  <h1>Payload and track a number</h1>
+  <p>Payload a number to find some foot print as well as some info regarding to the number.</p>
+  <form action="{% url 'trigger:simtrack' %}" class="form">
+    <input type="phone" name="num" id="phone" placeholder="Enter a number +123456789000" oninput="searchPlus()" minlength="10" required>
+    <p class="error">
+      <strong>Make sure it is in E165 format</strong>
+      <small>e.g +123456789000</small>
+    </p>
+    <p class="note"><strong>Note: </strong>Make sure the length of the number is correct</p>
+    <button type="submit">Run payload</button>
+  </form>
+{% endblock form %}
+
+
+{% block result %}
+  <span>
+    {% if num_parse %}
+      <h2>Local scan</h2>
+      <br>
+
+      <li>Info: {{num_parse}}</li>
+      <br>
+    {% endif %}
+
+    {% if inter_nation %}
+      <li>International: {{inter_nation}}</li>
+    {% endif %}
+
+    {% if p_nation %}
+      <li>National: {{p_nation}}</li>
+      <li>Local: {{p_nation}}</li>
+    {% endif %}
+
+    {% if num_valid %}
+      <li>Valid: {{num_valid}}</li>
+    {% endif %}
+    {% if p_e164 %}
+      <li>E164: {{p_e164}}</li>
+    {% endif %}
+
+    {% if p_geo %}
+      <li>Geo: {{p_geo}}</li>
+      <br>
+    {% endif %}
+    {% if p_carr %}
+      <li>Carrier: {{p_carr}}</li>
+    {% endif %}
+
+    {% if time_zone_1 %}
+      <li>Timezone 1: {{time_zone_1}}</li>
+    {% endif %}
+    {% if time_zone_2 %}
+      <li>Timezone 2: {{time_zone_2}}</li>
+    {% endif %}
+  </span>
+
+  <span>
+    {% if inter_nation %}
+      <h2>Mass scan</h2>
+      <br>
+    {% endif %}
+    
+    {% if p_geo %}
+      <p>Location:</p>
+      <li>
+        Locate ({{p_geo}}) on google: <a href="https://www.google.nl/maps/place/{{p_geo}}/&amp;" target="_blank">Find {{inter_nation}} base location</a>
+      </li>
+      <br>
+    {% endif %}
+    
+    {% if num_parse %}
+      <li>
+        Google OVH (general) <a href="https://www.google.com/search?q=intext:'{{p_e164}}' OR intext'{{inter_nation}}' OR intext:'{{p_nation}}'" target="_blank">Google (general)</a>
+      </li>
+    {% endif %}
+
+    {% for site in sites_list %}
+      {% if inter_nation %}
+        <!-- <li>
+          Google ({{site.site}}): <a href="https://www.google.com/search?q={{site.site}} intext:'{{p_e164}}' OR intext'{{inter_nation}}' OR intext:'{{p_nation}}'" target="_blank">Google ({{site.site|slice:"5:-4"|upper}})</a>
+        </li> -->
+        <li>
+          Google ({{site|slice:'5:-4'}}): <a href="https://www.google.com/search?q={{site.site}} intext:'{{p_e164}}' OR intext'{{inter_nation}}' OR intext:'{{p_nation}}'" target="_blank">Google ({{site|slice:"5:-4"|upper}})</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </span>
+{% endblock result %}

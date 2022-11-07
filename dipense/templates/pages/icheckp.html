@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  <title>DiPense | i-check-p</title>
+{% endblock title %}
+
+
+{% block form %}
+  <h1>Payload and track an iP address</h1>
+  <p>Payload an ip address to track and find some foot print as well as some info regarding to the ip address. To track your own ip address put "me" inside the input below, and run payload</p>
+
+  {% if d_location %}
+    <a href="{% url 'trigger:map' r2 %}" target="_blank" class="map_view">View ip location on map</a>
+  {% endif %}
+
+  <form action="{% url 'trigger:icheckp' %}" class="form">
+    <input type="text" name="ip_num" placeholder="Enter ip address 198.168.57.01" oninput="searchPlus()" required>
+    <button type="submit">Run payload</button>
+  </form>
+{% endblock form %}
+
+
+{% block result %}
+  <span>
+    {% if d_location %}
+      <p>New browser window or tab will be open soon! to show you the location visually on map</p>
+      <h3>GPS coordinates:</h3>
+      <li><b>Coordinates</b>: {{d_location}}</li>
+      <li><b>Latitude</b>: {{d_latitude}}</li>
+      <li><b>Longitude</b>: {{d_longitude}}</li>
+      <br>
+    {% else %}
+      <a class="danger">Unable to catch ({{i_num}}) ip address</a>
+    {% endif %}
+    
+    {% if cty %}
+      <li>City: {{cty}}</li>
+    {% endif %}
+
+    {% if stt %}
+      <li>State: {{stt}}</li>
+    {% endif %}
+
+    {% if ctry %}
+      <li>Country code: {{ctry}}</li>
+    {% endif %}
+
+    {% if time_zone %}
+      <li>Timezone: {{time_zone}}</li>
+    {% endif %}
+
+    {% if cty %}
+      <li>
+        Locate ({{cty}}) on google map: <a href="https://www.google.nl/maps/place/{{cty}}/&amp;" target="_blank">Find {{cty}} location</a>
+      </li>
+    {% endif %}
+  </span>
+{% endblock result %}

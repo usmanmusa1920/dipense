@@ -1,5 +1,10 @@
 FROM python:3.8.5-alpine
 
+LABEL name="dipense"
+LABEL version="test"
+LABEL description="An OSINT tool lab for IT ninjas"
+MAINTAINER Usman Musa
+
 RUN pip install --upgrade pip
 
 RUN python -m venv /opt/venv

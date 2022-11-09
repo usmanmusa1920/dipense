@@ -15,4 +15,4 @@ docker run -p 80:80 usmanmusa/dipense
 
 ### DiPense at a glance
 
-![DiPense at a glance](.screen-shot.png)
+![DiPense at a glance](screen-shot.png)

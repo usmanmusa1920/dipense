@@ -27,6 +27,10 @@ server that can serve static files, and it is a proxy to that gunicorn container
 
 - https://dipense.usmanmusa.tk
 
+## Docker hub repo at:
+
+- https://hub.docker.com/r/usmanmusa/dipense
+
 ## Build Status
 - version 0.1
 

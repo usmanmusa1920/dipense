@@ -12,3 +12,7 @@ docker run -p 80:80 usmanmusa/dipense
 
 ## Build Status
 - version 0.1
+
+### DiPense at a glance
+
+![DiPense at a glance](.screen-shot.png)

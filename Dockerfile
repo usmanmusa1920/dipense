@@ -1,7 +1,7 @@
 FROM python:3.8.5-alpine
 
 LABEL name="dipense"
-LABEL version="test"
+LABEL version="0.1"
 LABEL description="An OSINT tool lab for IT ninjas"
 MAINTAINER Usman Musa
 

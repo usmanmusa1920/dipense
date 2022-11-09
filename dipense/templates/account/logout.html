@@ -9,7 +9,12 @@
 {% block form %}
   <h1>You are out!</h1>
   <p>You are out of the great community of hackers gurus and <b>IT ninjas</b>, please come back now into your lab, you will have a chance of winning an ocean of coffee</p>
-  <h1>back now!</h1>
+
+  <h1>
+    <a href="{% url 'account:auth:login' %}" class="peace">login</a>
+    OR <a href="{% url 'account:signup' %}" class="peace">signup</a>
+  </h1>
+  <h1>we want you back now!</h1>
 {% endblock form %}
 
 

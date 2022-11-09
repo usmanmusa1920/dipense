@@ -9,6 +9,14 @@
 {% block form %}
   <h1>Login to your lab!</h1>
   <p>Beware of a hacker like you around you!</p>
+  <p>
+    <b>Default</b> login credentials for admin user
+    <br>
+    <b>Email:</b> mr_robot@mail.com
+    <br>
+    <b>password:</b> root1234
+  </p>
+  
   <form method="POST" class="form">
     {% csrf_token %}
     <input type="email" name="username" placeholder="Enter email address" required>
@@ -20,6 +28,10 @@
     {% endif %}
     <button type="submit">submit</button>
   </form>
+
+  <h1>
+    <a href="{% url 'account:signup' %}" class="peace">signup</a>
+  </h1>
 {% endblock form %}
 
 

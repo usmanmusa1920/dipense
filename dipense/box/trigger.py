@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 import whois
 from .default import default
+from account.models import WhoisPayloadRec
 
 
 
@@ -39,6 +40,10 @@ class WH:
       state = howis.state
       registrant_postal_code = howis.registrant_postal_code
       country = howis.country
+      
+      # saving the payloaded phone into database
+      history = WhoisPayloadRec(payload_whois=domain)
+      history.save()
       
       context = {
         'howis': howis,

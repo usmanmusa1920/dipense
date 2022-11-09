@@ -76,5 +76,6 @@ class STRACK:
     except:
       context = {
         'default': default(),
+        'p_num': p_num,
       }
     return render(request, 'pages/simtrack.html', context)

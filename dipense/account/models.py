@@ -132,3 +132,12 @@ class Visitors(models.Model):
   
   def __str__(self):
     return 'New visitor from {} on {}, of {}'.format(self.ip_address, self.timestamp, self.metrix.id)
+
+
+class WhoisPayloadRec(models.Model):
+  payload_whois = models.TextField()
+  timestamp = models.DateTimeField(default=timezone.now)
+  is_seen = models.BooleanField(default=False)
+  
+  def __str__(self):
+    return 'A domain of {} was payloaded on {}'.format(self.payload_whois, self.timestamp)

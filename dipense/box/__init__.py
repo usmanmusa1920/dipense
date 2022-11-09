@@ -1,3 +1,6 @@
+from django.urls import reverse
+from django.contrib import messages
+from django.shortcuts import redirect
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -14,5 +17,8 @@ class SMTK(STRACK):
   pass
 
 
-class HW(WH):
-  pass
+class WH(WH):
+  
+  def coming(request, pg):
+    messages.success(request, f'This page ({pg}) is coming soon!')
+    return redirect(reverse('landing'))

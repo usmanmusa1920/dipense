@@ -11,7 +11,8 @@
   <p>Payload an ip address to track and find some foot print as well as some info regarding to the ip address. To track your own ip address put "me" inside the input below, and run payload</p>
 
   {% if d_location %}
-    <a href="{% url 'trigger:map' r2 %}" target="_blank" class="map_view">View ip location on map</a>
+    <a target="_blank" class="map_view">scroll down to see result</a>
+    <!-- <a href="{% url 'trigger:map' r2 %}" target="_blank" class="map_view">View ip location on map</a> -->
   {% endif %}
 
   <form action="{% url 'trigger:icheckp' %}" class="form">

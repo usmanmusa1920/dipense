@@ -10,20 +10,22 @@
   <h1>How me DiPense</h1>
   <p><strong><i>*** Welcome to DiPense ***</i></strong> an OSINT framework for tracking phone number, IP adress and much more. DiPense system do not take any of your information or data in any way or the other, to find or find some information and retrieve in any way illegally without the permission of the owner.</p>
 
-  {% if request.user.is_authenticated %}
-    <!-- pass -->
-  {% else %}
-    <p>
-      <b>Default</b> login credentials
-      <br>
-      <b>Email:</b> anonymous@mail.com
-      <br>
-      <b>password:</b> root
-    </p>
+  <!-- {% comment %}
+    {% if request.user.is_authenticated %}
+      
+    {% else %}
+      <p>
+        <b>Default</b> login credentials for admin user
+        <br>
+        <b>Email:</b> anonymous@mail.com
+        <br>
+        <b>password:</b> root_password
+      </p>
 
-    <h1>You must login first <a href="{% url 'account:auth:login' %}" class="peace">login</a></h1>
-    <h1>OR <a href="{% url 'account:signup' %}" class="peace">signup</a></h1>
-  {% endif %}
+      <h1>You must login first <a href="{% url 'account:auth:login' %}" class="peace">login</a></h1>
+      <h1>OR <a href="{% url 'account:signup' %}" class="peace">signup</a></h1>
+    {% endif %}
+  {% endcomment %} -->
 
   <p>We do enhance foot print of a phone number belongs to also an ip address. Although using this tool may or may not be illegal at some certain circumstance depending on the use cases.</p>
   

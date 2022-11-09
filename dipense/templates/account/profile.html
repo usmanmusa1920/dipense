@@ -10,20 +10,25 @@
   <span class="anony">
     <div class="anonymous">
       <div>
-        <img src="{{request.user.image.url}}" alt="" srcset="">
+        {% if request.user.is_authenticated %}
+          <!-- <img src="{{request.user.image.url}}" alt="" srcset=""> -->
+          <img src="{% static 'media/anonymous.jpg' %}" alt="" srcset="">
+        {% else %}
+          <img src="{% static 'media/user.png' %}" alt="" srcset="">
+        {% endif %}
       </div>
     </div>
   </span>
-  <a href="{% url 'account:mask' %}" class="peace">Edit image</a>
+  <!-- <a href="{% url 'account:mask' %}" class="peace">Edit image</a> -->
 
-  <h1>Anonymous User</h1>
-  <p>I'm a hacker and cybersecurity expert</p>
+  <h1>{{request.user.first_name}} {{request.user.last_name}}</h1>
+  <p>My bio is: I'm <b>{{request.user.username}}</b> an IT ninja</p>
 {% endblock form %}
 
 
 {% block result %}
   <span>
-    <p>I am a hacker, my first goal when I want to hack is to gather information enough as I can about my target</p>
+    <p>Being me a hacker, my first goal when I want to hack is to gather information enough as I can about my target</p>
     <br>
 
     <h3>Status: loading</h3>

@@ -7,7 +7,7 @@
 
 
 {% block form %}
-  <h1>Payload domain</h1>
+  <h1>Payload domain name</h1>
   <p>Find information about a domain name, in most cases domains with top level extension (.com, .org, .net, etc) are capture, while others are captured less (.tk, .io, .info, etc)</p>
 
   {% if domain_name %}
@@ -15,7 +15,7 @@
   {% endif %}
 
   <form action="{% url 'trigger:howis' %}" class="form">
-    <input type="text" name="domain" placeholder="Enter domain name" oninput="searchPlus()" required>
+    <input type="text" name="domain" placeholder="Enter domain name e.g google.com" oninput="searchPlus()" required>
     <button type="submit">Run payload</button>
   </form>
 {% endblock form %}

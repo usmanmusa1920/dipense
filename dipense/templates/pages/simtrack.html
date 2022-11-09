@@ -9,6 +9,11 @@
 {% block form %}
   <h1>Payload and track a number</h1>
   <p>Payload a number to find some foot print as well as some info regarding to the number.</p>
+
+  {% if num_parse %}
+    <a target="_blank" class="map_view">scroll down to see result</a>
+  {% endif %}
+
   <form action="{% url 'trigger:simtrack' %}" class="form">
     <input type="phone" name="num" id="phone" placeholder="Enter a number +123456789000" oninput="searchPlus()" minlength="10" required>
     <p class="error">
@@ -61,6 +66,13 @@
     {% if time_zone_2 %}
       <li>Timezone 2: {{time_zone_2}}</li>
     {% endif %}
+
+
+    {% if num_parse %}
+      <!-- pass -->
+    {% else %}
+      <a class="danger">Unable to find ({{p_num}}) in the system</a>
+    {% endif %}
   </span>
 
   <span>
@@ -79,7 +91,7 @@
     
     {% if num_parse %}
       <li>
-        Google OVH (general) <a href="https://www.google.com/search?q=intext:'{{p_e164}}' OR intext'{{inter_nation}}' OR intext:'{{p_nation}}'" target="_blank">Google (general)</a>
+        Google OVH (general) <a href='https://www.google.com/search?q=intext:"{{p_e164}}" OR intext"{{inter_nation}}" OR intext:"{{p_nation}}"'' target="_blank">Google (general)</a>
       </li>
     {% endif %}
 
@@ -89,9 +101,16 @@
           Google ({{site.site}}): <a href="https://www.google.com/search?q={{site.site}} intext:'{{p_e164}}' OR intext'{{inter_nation}}' OR intext:'{{p_nation}}'" target="_blank">Google ({{site.site|slice:"5:-4"|upper}})</a>
         </li> -->
         <li>
-          Google ({{site|slice:'5:-4'}}): <a href="https://www.google.com/search?q={{site.site}} intext:'{{p_e164}}' OR intext'{{inter_nation}}' OR intext:'{{p_nation}}'" target="_blank">Google ({{site|slice:"5:-4"|upper}})</a>
+          Google ({{site|slice:'5:-4'}}): <a href='https://www.google.com/search?q={{site}} intext:"{{p_e164}}" OR intext"{{inter_nation}}" OR intext:"{{p_nation}}"'' target="_blank">Google ({{site|slice:"5:-4"|upper}})</a>
         </li>
       {% endif %}
     {% endfor %}
+
+
+    {% if num_parse %}
+      <!-- pass -->
+    {% else %}
+      <a class="danger">Payload a number and find holes for a number</a>
+    {% endif %}
   </span>
 {% endblock result %}

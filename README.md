@@ -36,4 +36,4 @@ server that can serve static files, and it is a proxy to that gunicorn container
 
 ## DiPense at a glance
 
-![DiPense at a glance](screen-shot.png)
+![DiPense at a glance](docs/screen-shot.png)

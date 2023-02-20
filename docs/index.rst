@@ -4,7 +4,7 @@ DiPense
 
 An OSINT tool lab for IT ninjas
 
-How to DiPense
+How me DiPense
 ==============
 
 To use this tool you have to make sure you have **docker** install as well as **docker-compose**, also make sure you have nothing running on port **8000** and **80** because these ports are going to be use for the services

@@ -25,7 +25,7 @@ server that can serve static files, and it is a proxy to that gunicorn container
 
 ## Officially site at:
 
-- https://dipense.usmanmusa.tk
+- https://dipense.readthedocs.io/en/latest/
 
 ## Docker hub repo at:
 

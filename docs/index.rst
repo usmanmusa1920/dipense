@@ -47,4 +47,6 @@ Build Status
 DiPense at a glance
 ===================
 
-![DiPense at a glance](/screen-shot.png)
+.. image:: /screen-shot.png
+  :width: 400
+  :alt: Alternative text

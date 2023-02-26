@@ -2,7 +2,7 @@
 DiPense
 =======
 
-An OSINT tool lab for IT ninjas
+*** Welcome to DiPense *** An OSINT tool for IT ninjas, for reconnoitring phone number, ip address, DNS, and others. To be honest the application is free, beware with me your intent matter. **DiPense** system do not take any of your information or data in any way or the other, to find or find some information and retrieve in any way illegally without the permission of the owner.
 
 How me DiPense
 ==============
@@ -25,6 +25,33 @@ Once that finish, you will notice in your terminal that it says you can reach it
 
 **http://0.0.0.0:8000**, that one is a gunicorn server which doesn't serve static files,
 we recommend visiting it at port **80** which is an **Nginx** server that can serve static files, and it is a proxy to that gunicorn container
+
+Look around
+===========
+
+You can install dipense from pypi using: pip install dipense see `more <https://pypi.org/project/dipense>`_ on how to use it
+
+You can use dipense by pulling it from docker using: docker pull usmanmusa/dipense follwo the documentation here on how it is (use).
+
+Give away
+=========
+
+Hey you anonymous!, mass scan is a portion of the end result, that will give a reference and some links that are/may be associated with the cellular number was payloaded into DiPense system.
+
+Local scan
+==========
+
+It (local scan) is a portion (out come) of your payload, which will give a local format of the number that payloaded into the system, without showing the plus sign (+) i.e negating it unlike in internationall format.
+
+About
+=====
+
+DiPense is an OSINT framework that was design for IT ninjas, to be able to detect and track a cellular number and a foot print belongs to the number also an ip address. Although using this tool may lead to data breach or illegal at all at some certain circumstance depending on the use cases
+
+Contact Us
+==========
+
+Give away Hey you anonymous! any complaint that you have to, feel free to deliver to us or something you found which is not support to be, also feel free to get it to us, we will response at the earliest. Our mission is to make IT more enthusiastic and more fun to IT ally
 
 Officially site at:
 ===================

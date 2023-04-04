@@ -11,11 +11,11 @@ To use this tool you have to make sure you have **docker** install as well as **
 
 After that then you are to pull the image from docker with::
 
-    **docker pull usmanmusa/dipense**
+    docker pull usmanmusa/dipense
 
 Next you are to clone the github repo of the project::
 
-    **git clone https://github.com/usmanmusa1920/dipense.git**
+    git clone https://github.com/usmanmusa1920/dipense.git
 
 in other to get the **docker-compose.yml**
 
@@ -29,39 +29,41 @@ we recommend visiting it at port **80** which is an **Nginx** server that can se
 Look around
 ===========
 
-You can install dipense from pypi using: pip install dipense see `more <https://pypi.org/project/dipense>`_ on how to use it
+You can install dipense from pypi using::
 
-You can use dipense by pulling it from docker using: docker pull usmanmusa/dipense follwo the documentation here on how it is (use).
+    pip install dipense
+
+see `more <https://dipense-lib.readthedocs.io>`_ on how to use it
+
+You can use dipense by pulling it from docker using::
+
+    docker pull usmanmusa/dipense
+
+follow the documentation here on how it is (use).
 
 Give away
 =========
 
-Hey you anonymous!, mass scan is a portion of the end result, that will give a reference and some links that are/may be associated with the cellular number was payloaded into DiPense system.
+Hey you anonymous!, **mass scan** is a portion of the end result, that will give a reference and some links that are/may be associated with the cellular number was payloaded into DiPense system.
 
 Local scan
 ==========
 
 It (local scan) is a portion (out come) of your payload, which will give a local format of the number that payloaded into the system, without showing the plus sign (+) i.e negating it unlike in internationall format.
 
-About
-=====
-
-DiPense is an OSINT framework that was design for IT ninjas, to be able to detect and track a cellular number and a foot print belongs to the number also an ip address. Although using this tool may lead to data breach or illegal at all at some certain circumstance depending on the use cases
-
 Contact Us
 ==========
 
 Give away Hey you anonymous! any complaint that you have to, feel free to deliver to us or something you found which is not support to be, also feel free to get it to us, we will response at the earliest. Our mission is to make IT more enthusiastic and more fun to IT ally
 
-Officially site at:
-===================
+Useful links:
+-------------
 
-- https://dipense.readthedocs.io/en/latest/
+- `Repository <https://github.com/usmanmusa1920/dipense>`_
 
-Docker hub repo at:
-===================
+- `PYPI Release <https://pypi.org/project/dipense>`_
 
-- https://hub.docker.com/r/usmanmusa/dipense
+- `Docker-hub Release <https://hub.docker.com/r/usmanmusa/dipense>`_
 
 Build Status
 ============

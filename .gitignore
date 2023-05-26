@@ -1,3 +1,7 @@
+# for pypi
+dist
+dipense.egg-info
+
 # Compiled Python files
 *.pyc
 

@@ -33,7 +33,7 @@ You can install dipense from pypi using::
 
     pip install dipense
 
-see `more <https://dipense-lib.readthedocs.io>`_ on how to use it
+see `more <https://dipense.readthedocs.io>`_ on how to use it
 
 You can use dipense by pulling it from docker using::
 
@@ -55,6 +55,16 @@ Contact Us
 ==========
 
 Give away Hey you anonymous! any complaint that you have to, feel free to deliver to us or something you found which is not support to be, also feel free to get it to us, we will response at the earliest. Our mission is to make IT more enthusiastic and more fun to IT ally
+
+Table of content
+----------------
+
+.. toctree::
+  :maxdepth: 2
+
+  quick_start
+  library/index
+
 
 Useful links:
 -------------

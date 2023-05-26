@@ -81,8 +81,8 @@ python route.py
 
 ## Useful links
 
-- Documentation: https://dipense-lib.readthedocs.io
-<!-- - Repository: https://github.com/usmanmusa1920/dipense-lib -->
+- Documentation: https://dipense.readthedocs.io
+<!-- - Repository: https://github.com/usmanmusa1920/dipense -->
 - PYPI Release: https://pypi.org/project/dipense
 - Docker-hub Release: https://hub.docker.com/r/usmanmusa/dipense
 

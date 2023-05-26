@@ -1,7 +1,7 @@
 
 # DiPense
 
-An OSINT tool lab for IT ninjas
+An OSINT tool for IT ninjas
 
 # How me DiPense (Docker version)
 

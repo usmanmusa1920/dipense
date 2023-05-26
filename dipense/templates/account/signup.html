@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  <title>DiPense | signup</title>
+{% endblock title %}
+
+
+{% block form %}
+  <h1>Signup to capture the flag</h1>
+  <p>Beware of a hacker like you around you!</p>
+  <form method="POST" class="form">
+    {% csrf_token %}
+    <input type="text" name="first_name" placeholder="First name" class="input" maxlength="70" required>
+    <input type="text" name="last_name" placeholder="Last name" class="input" maxlength="70" required>
+
+    <input type="text" name="username" placeholder="Username" class="input" required>
+    {% if form.username.errors %}
+      <p><i><strong><small>--- {{form.username.errors}}</small></strong></i></p>
+    {% endif %}
+    <input type="email" name="email" placeholder="Email addres" class="input" required>
+    {% if form.email.errors %}
+      <p><i><strong><small>--- {{form.email.errors}}</small></strong></i></p>
+    {% endif %}
+
+    <input type="password" name="password1" placeholder="Enter new password" required>
+    {% if form.password1.errors %}
+      <p><i><strong><small>--- {{form.new_password2.errors}}</small></strong></i></p>
+    {% endif %}
+    <input type="password" name="password2" placeholder="Enter new password again" required>
+    {% if form.password2.errors %}
+      <p><i><strong><small>--- {{form.password2.errors}}</small></strong></i></p>
+      <p><i><strong><small>--- Password should not be similar to your account information, with a min-length of 8 character and avoid using numeric password entirely. Include symbols to make it strong like (?/@.^*) etc.</small></strong></i></p>
+    {% endif %}
+    <button type="submit">submit</button>
+  </form>
+
+  <h1>
+    <a href="{% url 'account:auth:login' %}" class="peace">login</a>
+  </h1>
+{% endblock form %}
+
+
+{% block result %}
+  <span>
+    <p>Use strong password for your lab!</p>
+    <br>
+    <h3>Passwords level:</h3>
+    <li>Weak: my-dipense-lab</li>
+    <li>Poor: my-dipense-lab-123</li>
+    <li>Strong: my-dipense-lab-+@$*5b96ffe3d3b34fba1afa03ab35847b</li>
+  </span>
+{% endblock result %}

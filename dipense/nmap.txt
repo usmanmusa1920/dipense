@@ -1,0 +1,14 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2022-11-19 15:33 WAT
+Nmap scan report for 197.3.11.5
+Host is up (0.17s latency).
+Not shown: 906 closed ports, 93 filtered ports
+PORT    STATE SERVICE
+587/tcp open  submission
+Device type: general purpose|VoIP adapter
+Running (JUST GUESSING): Linux 2.6.X (86%), Cisco embedded (85%)
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/h:cisco:unified_call_manager
+Aggressive OS guesses: Linux 2.6.18 - 2.6.22 (86%), Cisco Unified Communications Manager VoIP adapter (85%), Linux 2.6.26 (PCLinuxOS) (85%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 59.64 seconds

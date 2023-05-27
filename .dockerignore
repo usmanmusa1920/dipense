@@ -2,3 +2,5 @@ Dockerfile
 .git
 venv
 .gitignore
+library
+docs

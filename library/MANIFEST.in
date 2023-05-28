@@ -1,1 +1,1 @@
-global-include *.txt *.py *.in *.md LICENSE CHANGELOG
+global-include *.txt *.py *.in *.md LICENSE CHANGELOG README.md

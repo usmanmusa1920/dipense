@@ -16,7 +16,7 @@ setup(
   repo = "https://github.com/usmanmusa1920/dipense-lib",
   author = "Usman Musa",
   author_email = "usmanmusa1920@gmail.com",
-  License = "MIT", # Choose your license, note the American spelling
+  license = "MIT", # Choose your license, note the American spelling
   classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",

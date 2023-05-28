@@ -118,7 +118,7 @@ See more documentations <a href="https://dipense.readthedocs.io">here!</a>
 - Docker Release: https://hub.docker.com/r/usmanmusa/dipense
 
 ## Build Status
-- version 0.1.1
+- version 0.1.2
 
 ## DiPense at a glance (docker)
 

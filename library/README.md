@@ -88,4 +88,4 @@ python route.py
 
 ## DiPense at a glance (docker)
 
-![DiPense at a glance](../docs/screen-shot.png)
+![DiPense at a glance](../docs/media/screen-shot.png)

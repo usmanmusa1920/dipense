@@ -158,7 +158,6 @@ class ICHECKP:
             that mean after 1 minute
           """
           if ctime()[-10:-8] != i[-15:-13] and ctime()[-7:-5] != i[-12:-10]:
-            print('Inside for loop if inn')
             os.remove(os.path.join(map_dir, i))
 
       # saving the payloaded ip address into database

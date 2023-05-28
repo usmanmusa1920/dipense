@@ -122,4 +122,4 @@ See more documentations <a href="https://dipense.readthedocs.io">here!</a>
 
 ## DiPense at a glance
 
-![DiPense at a glance](docs/screen-shot.png)
+![DiPense at a glance](docs/media/screen-shot.png)

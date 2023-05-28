@@ -82,6 +82,6 @@ Build Status
 DiPense at a glance
 ===================
 
-.. image:: screen-shot.png
+.. image:: media/screen-shot.png
   :width: 400
   :alt: Alternative text

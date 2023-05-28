@@ -1,4 +1,4 @@
-Django==3.0.8
+Django==3.2.2
 geocoder==1.38.1
 gunicorn==20.0.4
 phonenumbers==8.13.0

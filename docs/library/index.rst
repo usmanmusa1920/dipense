@@ -75,6 +75,6 @@ Useful links:
 DiPense at a glance (docker)
 ============================
 
-.. image:: screen-shot.png
+.. image:: media/screen-shot.png
   :width: 400
   :alt: Alternative text

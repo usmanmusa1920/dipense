@@ -1,8 +1,8 @@
 FROM python:3.8.5-alpine
 
 LABEL name="dipense"
-LABEL version="0.1"
-LABEL description="An OSINT tool lab for IT ninjas"
+LABEL version="0.1.1"
+LABEL description="An OSINT tool for IT ninjas"
 MAINTAINER Usman Musa
 
 RUN pip install --upgrade pip

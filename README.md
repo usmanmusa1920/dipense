@@ -111,7 +111,7 @@ Pull requests are welcome
 
 ## Build Status
 
-- version 0.1
+- version 0.1.1
 
 ## DiPense at a glance (docker)
 

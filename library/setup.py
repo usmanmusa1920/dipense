@@ -5,7 +5,7 @@ from setuptools import find_packages
 
 setup(
   name = "dipense", # name of the main package (base folder i.e dipense)
-  version = "0.1",
+  version = "0.1.1",
   description = "An OSINT tool for IT ninjas",
   long_description = open("README.md").read() + "\n\n" + open("CHANGELOG").read(),
   long_description_content_type="text/markdown",

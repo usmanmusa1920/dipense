@@ -120,6 +120,10 @@ See more documentations <a href="https://dipense.readthedocs.io">here!</a>
 ## Build Status
 - version 0.1.1
 
-## DiPense at a glance
+## DiPense at a glance (docker)
 
 ![DiPense at a glance](docs/media/screen-shot.png)
+
+## DiPense at a glance (pypi)
+
+![DiPense at a glance](docs/media/dipense-terminal.png)

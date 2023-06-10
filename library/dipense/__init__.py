@@ -19,14 +19,15 @@
     
 """
 
-__title__ = "dipense"
-__version__ = "0.1.2"
-__author__ = "Usman Musa"
-__author_email__ = "usmanmusa1920@gmail.com"
-__author_website__ = "https://usmanmusa1920.github.io"
-__repository__ = "https://github.com/usmanmusa1920/dipense-lib"
-__website__ = "https://dipense-lib.readthedocs.io"
-__copyright__ = "Copyright (C) 2022 - 2023 Usman Musa"
+__title__ = 'dipense'
+__version__ = '0.1.2'
+__author__ = 'Usman Musa'
+__author_email__ = 'usmanmusa1920@gmail.com'
+__author_website__ = 'https://usmanmusa1920.github.io'
+__repository__ = 'https://github.com/usmanmusa1920/dipense'
+__url__ = 'https://dipense.readthedocs.io'
+__copyright__ = 'Copyright (C) 2022 - 2023 Usman Musa'
+
 
 import argparse
 from .icheckp import ICHECKP
@@ -35,17 +36,17 @@ from .default import Default
 
 
 # def icheckp(ip, autoOpenMap=False):
-#   print("The year is", default()["the_year"])
+#   print('The year is', default()['the_year'])
 
 getout = print
 def ipLoad():
   # prog is the name of the program, default=sys.argv[0]
-  parser = argparse.ArgumentParser(prog="scan an ip address", description="This scan an ip address!")
+  parser = argparse.ArgumentParser(prog='scan an ip address', description='This scan an ip address!')
   
   # metavar make the -help to look cleaan
-  parser.add_argument("--ip", "-i", required=True, type=str, metavar="", help="What is the ip address?")
-  parser.add_argument("--open", "-o", default=False, required=False, type=str, metavar="", help="This will automatic open your map in web browser, it is a boolean of `True or False`")
-  parser.add_argument(dest="payloadip", default="payloadip", type=str, metavar="", help="The payload is to find an ip address infomation")
+  parser.add_argument('--ip', '-i', required=True, type=str, metavar='', help='What is the ip address?')
+  parser.add_argument('--open', '-o', default=False, required=False, type=str, metavar='', help='This will automatic open your map in web browser, it is a boolean of `True or False`')
+  parser.add_argument(dest='payloadip', default='payloadip', type=str, metavar='', help='The payload is to find an ip address infomation')
   
   args = parser.parse_args()
   ICHECKP(autoOpenMap=args.open).icheckp(args.ip)
@@ -75,14 +76,14 @@ def payloads(helper):
   lst_2 = [dft+i for i in lst_1]
   
   if len(sys.argv) == 1:
-    getout("\n Include a positional argument!")
+    getout('\n Include a positional argument!')
     getout(helper())
   elif sys.argv[1] not in lst_2:
-    getout(f"\n `{sys.argv[1]}` is not a valid positional argument!")
+    getout(f'\n `{sys.argv[1]}` is not a valid positional argument!')
     getout(helper())
   else:
     for i in lst_1:
-      if sys.argv[1] == f"{dft}{i}":
-        # if __name__ == "__main__":
-        logger.debug(run(eval(f"{i}Load()")))
+      if sys.argv[1] == f'{dft}{i}':
+        # if __name__ == '__main__':
+        logger.debug(run(eval(f'{i}Load()')))
         break

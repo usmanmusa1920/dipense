@@ -30,9 +30,9 @@ def staticView(request):
   
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", staticView, name="landing"),
-    path("", include('box.urls')),
-    path("", include('account.urls')),
+    path('', staticView, name='landing'),
+    path('', include('box.urls')),
+    path('', include('account.urls')),
 ]
 
 if settings.DEBUG:

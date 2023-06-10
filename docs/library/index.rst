@@ -19,7 +19,7 @@ After that create a new file let call it **route.py** in the file put the below 
     from dipense.structure import helper
 
 
-    if __name__ == "__main__":
+    if __name__ == '__main__':
       payloads(helper)
 
 save the file and navigate to where the file is located in terminal and your are ready to go

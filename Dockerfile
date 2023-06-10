@@ -1,4 +1,4 @@
-FROM python:3.10.10-alpine
+FROM python:3.10.12-alpine
 
 LABEL name="DiPense"
 LABEL version="0.1.2"

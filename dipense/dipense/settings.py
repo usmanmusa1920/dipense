@@ -22,17 +22,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 try:
-    SECRET_KEY = os.getenv("SECRET_KEY")
+    SECRET_KEY = os.getenv('SECRET_KEY')
 except:
     SECRET_KEY = 'django-insecure-9v9#c_55ie6onmnfai&^k_w(=u&kzcds7@02unczl(adyn(y8m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 try:
-    DEBUG = os.getenv("DEBUG_VALUE")
+    DEBUG = os.getenv('DEBUG_VALUE')
 except:
     DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -144,8 +144,8 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-LOGIN_URL = "account:auth:login"
-LOGIN_REDIRECT_URL = "landing"
+LOGIN_URL = 'account:auth:login'
+LOGIN_REDIRECT_URL = 'landing'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -37,7 +37,7 @@ Look around
 
 You can install dipense from pypi using::
 
-    pip install dipense
+    pip install --upgrade dipense
 
 see `more <https://dipense-lib.readthedocs.io>`_ on how to use it
 

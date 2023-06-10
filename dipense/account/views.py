@@ -24,20 +24,20 @@ class Accnt:
   @login_required
   def imageUpdate(request):
     """
-      instead of hard coded the path of our default mask image like:
-        '/home/usman/Desktop/acode/dipense/media/user.png'
-        
-      which will raise issues when deployed in a different environment
-      we use the `Path(__file__).resolve().parent.parent` to give
-      us this module parent of the parent path (which include the machine hostname)
-      the main reason is that of `hostname` since every machine has it own
+    instead of hard coded the path of our default mask image like:
+      '/home/usman/Desktop/acode/dipense/media/user.png'
       
-      and then join it with `media/user.png`
+    which will raise issues when deployed in a different environment
+    we use the `Path(__file__).resolve().parent.parent` to give
+    us this module parent of the parent path (which include the machine hostname)
+    the main reason is that of `hostname` since every machine has it own
+    
+    and then join it with `media/user.png`
     """
     default_img_path = os.path.join(Path(__file__).resolve().parent.parent, 'media/user.png')
     
     """
-      Here we check if the request method is POST then it will proceed, else it will return the user to the profile image update page together with his current profile image instance (image)
+    Here we check if the request method is POST then it will proceed, else it will return the user to the profile image update page together with his current profile image instance (image)
     """
     if request.method == 'POST':
       form = acc_forms.ImageUpdate(request.POST, request.FILES, instance=request.user)

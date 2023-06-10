@@ -14,41 +14,41 @@ class Filing:
 
   def dir_tree(self):
     """create a directory tree where file will reserved"""
-    sp.run(["sudo", "mkdir", "-p", ".dipense/maps"])
+    sp.run(['sudo', 'mkdir', '-p', '.dipense/maps'])
     
 
-  annot = """
+  annot = '''
 This method return a list of two files names
 (html and csv)
-"""
+'''
 
   # def mapName(self, i_num):
   def mapName(self, i_num) -> annot:
     """Filing method of assigning map files names"""
     
     """
-      replacing the dot '.' in an ip address with underscore '_'
-      also replace the spaces ' ' of the ctime with underscore '_', and
-      also the colon ':' is replaced with underscore '_' too!
-      
-      ip address format (e.g): '192.255.255.255'
-      ctime() format (e.g): 'Wed Nov 2 16:28:16 2022'
-      
-      
-      `r1` look like this at the end:
-        192_255_255_255_@_Wed_Nov__2_16:28:16_2022
+    replacing the dot '.' in an ip address with underscore '_'
+    also replace the spaces ' ' of the ctime with underscore '_', and
+    also the colon ':' is replaced with underscore '_' too!
+    
+    ip address format (e.g): '192.255.255.255'
+    ctime() format (e.g): 'Wed Nov 2 16:28:16 2022'
+    
+    
+    `r1` look like this at the end:
+      192_255_255_255_@_Wed_Nov__2_16:28:16_2022
     """
-    r1 = str(i_num.replace(".", "_")) + "_@_" + ctime().replace(" ", "_")
+    r1 = str(i_num.replace('.', '_')) + '_@_' + ctime().replace(' ', '_')
     
     """
       `r2` look like this at the end:
         192_255_255_255_@_Wed_Nov__2_16_28_16_2022
     """
-    r2 = r1.replace(":", "_")
+    r2 = r1.replace(':', '_')
     
     # the map file names (html & csv)
-    map_file_html = "map_" + str(r2) + ".html"
-    map_file_csv = "map_" + str(r2) + ".csv"
+    map_file_html = 'map_' + str(r2) + '.html'
+    map_file_csv = 'map_' + str(r2) + '.csv'
     
     return [map_file_html, map_file_csv]
     

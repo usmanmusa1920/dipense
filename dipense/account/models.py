@@ -76,7 +76,7 @@ class Messages(models.Model):
   is_read = models.BooleanField(default=False)
   
   def __str__(self):
-    return f"{self.full_name} message sent on {self.timestamp}"
+    return f'{self.full_name} message sent on {self.timestamp}'
     
 
 class Metrix(models.Model):
@@ -90,42 +90,42 @@ class Metrix(models.Model):
     the_year = str(timestamp_slice[:4]) # slicing month only, from `timestamp_slice`
     slc_month = str(timestamp_slice[5:7]) # slicing month only, from `timestamp_slice`
     
-    if slc_month == "01":
-      the_month = "january"
-    elif slc_month == "02":
-      the_month = "february"
-    elif slc_month == "03":
-      the_month = "march"
-    elif slc_month == "04":
-      the_month = "april"
-    elif slc_month == "05":
-      the_month = "may"
-    elif slc_month == "06":
-      the_month = "june"
-    elif slc_month == "07":
-      the_month = "july"
-    elif slc_month == "08":
-      the_month = "august"
-    elif slc_month == "09":
-      the_month = "september"
-    elif slc_month == "10":
-      the_month = "october"
-    elif slc_month == "11":
-      the_month = "november"
-    elif slc_month == "12":
-      the_month = "december"
+    if slc_month == '01':
+      the_month = 'january'
+    elif slc_month == '02':
+      the_month = 'february'
+    elif slc_month == '03':
+      the_month = 'march'
+    elif slc_month == '04':
+      the_month = 'april'
+    elif slc_month == '05':
+      the_month = 'may'
+    elif slc_month == '06':
+      the_month = 'june'
+    elif slc_month == '07':
+      the_month = 'july'
+    elif slc_month == '08':
+      the_month = 'august'
+    elif slc_month == '09':
+      the_month = 'september'
+    elif slc_month == '10':
+      the_month = 'october'
+    elif slc_month == '11':
+      the_month = 'november'
+    elif slc_month == '12':
+      the_month = 'december'
     else:
-      the_month = "ERROR WHILE SLICING"
+      the_month = 'ERROR WHILE SLICING'
       
     return [the_month, the_year]
     
   def __str__(self):
-    return f'We have total of (metrix) "{self.visit_num}" visitors, in {self.slice_timestamp[0]}, {self.slice_timestamp[1]}'
+    return f'We have total of (metrix) \'{self.visit_num}\' visitors, in {self.slice_timestamp[0]}, {self.slice_timestamp[1]}'
     
 
 class Visitors(models.Model):
   metrix = models.ForeignKey(Metrix, on_delete=models.CASCADE)
-  ip_address = models.CharField(max_length=255, blank=False, null=False, default="0.0.0.0")
+  ip_address = models.CharField(max_length=255, blank=False, null=False, default='0.0.0.0')
   timestamp = models.DateTimeField(default=timezone.now)
   is_seen = models.BooleanField(default=False)
   

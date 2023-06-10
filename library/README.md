@@ -7,7 +7,13 @@ An OSINT tool for IT ninjas
 # How to use the library
 First we recommend creating a virtual environment `python -m venv venv` and then activate it `source venv/bin/activate`
 
-Once that finish now install the library using `pip install dipense` and wait for the installation basically the library was uploaded using `sdist` (Source Distribution)
+Once that finish now install the library using
+
+```
+pip install --upgrade dipense
+```
+
+Wait for the installation to finish, basically the library was uploaded using `sdist` (Source Distribution)
 
 After that, create a new file let call it `route.py` in the file put the below code
 
@@ -16,7 +22,7 @@ from dipense import payloads
 from dipense.structure import helper
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     payloads(helper)
 ```
 

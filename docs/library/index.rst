@@ -78,3 +78,10 @@ DiPense at a glance (docker)
 .. image:: media/screen-shot.png
   :width: 400
   :alt: Alternative text
+
+DiPense at a glance (pypi)
+==========================
+
+.. image:: media/dipense-terminal.png
+  :width: 400
+  :alt: Alternative text

@@ -85,6 +85,10 @@ To see positional argument and flags available run the file without any flag or 
 python route.py
 ```
 
+## Version Status
+
+- version 0.1.4
+
 ## Useful links
 
 - Documentation: https://dipense.readthedocs.io
@@ -97,4 +101,4 @@ python route.py
 
 ## DiPense at a glance (pypi)
 
-[![DiPense at a glance](https://raw.githubusercontent.com/usmanmusa1920/dipense/v0.1.3/docs/library/media/screen-shot.png)](https://dipense.readthedocs.io)
+[![DiPense at a glance](https://raw.githubusercontent.com/usmanmusa1920/dipense/v0.1.3/docs/library/media/dipense-terminal.png)](https://dipense.readthedocs.io)

@@ -75,7 +75,7 @@ Useful links:
 Version Status
 ==============
 
-- version 0.1.2
+- version 0.1.4
 
 DiPense at a glance (docker)
 ============================

@@ -72,6 +72,11 @@ Useful links:
 
 - `Docker-hub Release <https://hub.docker.com/r/usmanmusa/dipense>`_
 
+Version Status
+==============
+
+- version 0.1.2
+
 DiPense at a glance (docker)
 ============================
 

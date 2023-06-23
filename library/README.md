@@ -93,8 +93,8 @@ python route.py
 
 ## DiPense at a glance (docker)
 
-[![DiPense at a glance](https://raw.githubusercontent.com/usmanmusa1920/dipense/v0.1.2/docs/media/screen-shot.png)](https://dipense.readthedocs.io)
+[![DiPense at a glance](https://raw.githubusercontent.com/usmanmusa1920/dipense/v0.1.3/docs/library/media/screen-shot.png)](https://dipense.readthedocs.io)
 
 ## DiPense at a glance (pypi)
 
-[![DiPense at a glance](https://raw.githubusercontent.com/usmanmusa1920/dipense/v0.1.2/docs/media/dipense-terminal.png)](https://dipense.readthedocs.io)
+[![DiPense at a glance](https://raw.githubusercontent.com/usmanmusa1920/dipense/v0.1.3/docs/library/media/screen-shot.png)](https://dipense.readthedocs.io)

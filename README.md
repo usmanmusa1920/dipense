@@ -127,8 +127,8 @@ See more documentations <a href="https://dipense.readthedocs.io">here!</a>
 
 ## DiPense at a glance (docker)
 
-![DiPense at a glance](docs/media/screen-shot.png)
+![DiPense at a glance](docs/library/media/screen-shot.png)
 
 ## DiPense at a glance (pypi)
 
-![DiPense at a glance](docs/media/dipense-terminal.png)
+![DiPense at a glance](docs/library/media/dipense-terminal.png)

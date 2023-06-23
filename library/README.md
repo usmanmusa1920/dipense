@@ -88,14 +88,13 @@ python route.py
 ## Useful links
 
 - Documentation: https://dipense.readthedocs.io
-<!-- - Repository: https://github.com/usmanmusa1920/dipense -->
-- PYPI Release: https://pypi.org/project/dipense
+- Repository: https://github.com/usmanmusa1920/dipense
 - Docker-hub Release: https://hub.docker.com/r/usmanmusa/dipense
 
 ## DiPense at a glance (docker)
 
-![DiPense at a glance](../docs/media/screen-shot.png)
+[![DiPense at a glance](https://raw.githubusercontent.com/usmanmusa1920/dipense/v0.1.2/docs/media/screen-shot.png)](https://dipense.readthedocs.io)
 
 ## DiPense at a glance (pypi)
 
-![DiPense at a glance](../docs/media/dipense-terminal.png)
+[![DiPense at a glance](https://raw.githubusercontent.com/usmanmusa1920/dipense/v0.1.2/docs/media/dipense-terminal.png)](https://dipense.readthedocs.io)

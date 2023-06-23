@@ -1,7 +1,7 @@
 FROM python:3.10.12-alpine
 
 LABEL name="DiPense"
-LABEL version="0.1.3"
+LABEL version="0.1.4"
 LABEL description="An OSINT tool for IT ninjas"
 MAINTAINER Usman Musa
 

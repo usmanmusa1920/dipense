@@ -10,48 +10,48 @@ from box.default import default
 
 
 class LoginCustom(LoginView):
-  """account login class"""
-  def get_context_data(self, **kwargs):
+    """account login class"""
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         current_site = get_current_site(self.request)
         context.update({
-          'default': default(),
-          self.redirect_field_name: self.get_redirect_url(),
-          'site': current_site,
-          'site_name': current_site.name,
-          **(self.extra_context or {})
+            'default': default(),
+            self.redirect_field_name: self.get_redirect_url(),
+            'site': current_site,
+            'site_name': current_site.name,
+            **(self.extra_context or {})
         })
         return context
-        
+    
 
 class LogoutCustom(LoginRequiredMixin ,LogoutView):
-  """account logout class"""
-  def get_context_data(self, **kwargs):
+    """account logout class"""
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         current_site = get_current_site(self.request)
         context.update({
-          'default': default(),
-          'site': current_site,
-          'site_name': current_site.name,
-          # 'title': _('Logged out'),
-          **(self.extra_context or {})
+            'default': default(),
+            'site': current_site,
+            'site_name': current_site.name,
+            # 'title': _('Logged out'),
+            **(self.extra_context or {})
         })
         return context
-        
+    
 
-def changePassword(request):
-  """change password view"""
-  if request.user.is_authenticated:
-    form = PasswordChangeForm(user=request.user, data=request.POST or None)
-    if form.is_valid():
-      form.save()
-      update_session_auth_hash(request, form.user)
-      messages.success(request, f'That sound great {request.user.first_name}, your password has been changed')
-      return redirect(reverse('landing'))
-    else:
-      context = {
-        'default': default(),
-        'form': form
-      }
-      return render(request, 'account/changePassword.html', context)
-  return False
+def change_password(request):
+    """change password view"""
+    if request.user.is_authenticated:
+        form = PasswordChangeForm(user=request.user, data=request.POST or None)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            messages.success(request, f'That sound great {request.user.first_name}, your password has been changed')
+            return redirect(reverse('landing'))
+        else:
+            context = {
+                'default': default(),
+                'form': form
+            }
+        return render(request, 'account/changePassword.html', context)
+    return False

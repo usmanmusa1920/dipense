@@ -4,6 +4,35 @@ DiPense - lib
 
 An OSINT tool for IT ninjas
 
+Release v\ |version|
+
+
+.. image:: https://static.pepy.tech/badge/dipense/month
+    :target: https://pepy.tech/project/dipense
+    :alt: DiPense Downloads Per Month Badge
+
+.. image:: https://static.pepy.tech/badge/dipense/week
+    :target: https://pepy.tech/project/dipense
+    :alt: DiPense Downloads Per Week Badge
+    
+.. image:: https://img.shields.io/pypi/l/dipense.svg
+    :target: https://pypi.org/project/dipense/
+    :alt: License Badge
+
+.. image:: https://img.shields.io/pypi/wheel/dipense.svg
+    :target: https://pypi.org/project/dipense/
+    :alt: Wheel Support Badge
+
+.. image:: https://img.shields.io/pypi/pyversions/dipense.svg
+    :target: https://pypi.org/project/dipense/
+    :alt: Python Version Support Badge
+
+.. image:: https://img.shields.io/github/contributors/usmanmusa1920/dipense.svg
+    :target: https://github.com/usmanmusa1920/dipense/graphs/contributors
+    :alt: Contributors Badge
+    
+-------------------
+
 How to use the library
 ======================
 

@@ -4,23 +4,23 @@
 #!/bin/bash
 
 # echo "<html>"
-# echo "  <head>"
-# echo "    <title>index</title>"
-# echo "  </head>"
-# echo "  <body>"
-# echo "     nn"
-# echo "  </body>"
+# echo "    <head>"
+# echo "        <title>index</title>"
+# echo "    </head>"
+# echo "    <body>"
+# echo "        nn"
+# echo "    </body>"
 # echo "</html>"
 
 cat << _EOF_
-  <html>
-    <head>
-      <title>index</title>
-    </head>
-    <body>
-       nn
-    </body>
-  </html>
+    <html>
+        <head>
+            <title>index</title>
+        </head>
+        <body>
+            nn
+        </body>
+    </html>
 _EOF_
 
 
@@ -34,22 +34,22 @@ who
 # Shell function are a way to group command for later execution using a single name for the group. They are executed just like a regular command, when a name of a function is called the list of commandassociated within that function will execute
 
 report_uptime () {
-  echo -n "Report up_time "
-  uptime
-  return
+    echo -n "Report up_time "
+    uptime
+    return
 }
 
 report_disk_space () {
-  echo -n "Report disk "
-  df -h
-  return
+    echo -n "Report disk "
+    df -h
+    return
 }
 
 report_home_space () {
-  echo -n "Report home "
-  # du -sh /home/*
-  du -sh $HOME
-  return
+    echo -n "Report home "
+    # du -sh /home/*
+    du -sh $HOME
+    return
 }
 
 report_uptime
@@ -77,11 +77,11 @@ sudo TIME_STAMP
 
 x=8
 if [ $x = 7 ]; then
-  echo "Equal to 7";
+     echo "Equal to 7";
 elfi [[ $x == 8 ]]; then
-  echo "0"
+    echo "0"
 else
- echo "Does not equal";
+    echo "Does not equal";
 fi
 
 # to see if whether a command you type on terminal is executed without error, type 

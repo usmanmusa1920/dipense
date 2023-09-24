@@ -3,30 +3,37 @@
 
 An OSINT tool for IT ninjas
 
+[![Downloads Month Badge](https://static.pepy.tech/badge/dipense/month)](https://pypi.org/project/dipense)
+[![Downloads Week Badge](https://static.pepy.tech/badge/dipense/week)](https://pypi.org/project/dipense)
+[![License Badge](https://img.shields.io/pypi/l/dipense.svg)](https://pypi.org/project/dipense)
+[![Supported Wheel Badge](https://img.shields.io/pypi/wheel/dipense.svg)](https://pypi.org/project/dipense)
+[![Supported Versions Badge](https://img.shields.io/pypi/pyversions/dipense.svg)](https://pypi.org/project/dipense)
+[![Contributors](https://img.shields.io/github/contributors/usmanmusa1920/dipense.svg)](https://github.com/usmanmusa1920/dipense/graphs/contributors)
+
 # How me DiPense (Docker release)
 To use this tool you have to make sure you have `docker` install as well as `docker-compose`, also make sure you have nothing running on port `8000` and `80` because these ports are going to be use for the services
 
 After that then you are to pull the image from docker with
 
-```
+```sh
 docker pull usmanmusa/dipense
 ```
 
 Next you are to clone the github repo of the project in other to get the `docker-compose.yml` by:
 
-```
+```sh
 git clone https://github.com/usmanmusa1920/dipense.git
 ```
 
 Now cd into the project folder you just clone to spin up the services using the command::
 
-```
+```sh
 docker-compose up
 ```
 
 you can use the command below instead of the above, in other to see how it build the image::
 
-```
+```sh
 docker-compose up --build
 ```
 
@@ -38,7 +45,7 @@ First we recommend creating a virtual environment `python -m venv venv` and then
 
 Once that finish now install the library using
 
-```
+```sh
 pip install --upgrade dipense
 ```
 
@@ -59,58 +66,42 @@ save the file and navigate to where the file is located in terminal and your are
 
 To find information about a domain name run the file like:
 
-```
+```sh
 python route.py payloadwho -d google.com
-```
-
-or
-
-```
+# or
 python route.py payloadwho --domain google.com
 ```
 
 
 To find information about an ip address run the file like so below, and the command require root previlage (super user):
 
-```
+```sh
 python route.py payloadip -i 198.3.11.7
-```
-
-or
-
-```
+# or
 python route.py payloadip --ip 198.3.11.7
 ```
 
 You can also specify a flag of `-o` or `--open` to `True` this will automatically open a webbrowser showing you where that ip address is located, like:
 
-```
+```sh
 python route.py payloadip -i 198.3.11.7 -o True
-```
-
-or
-
-```
+# or
 python route.py payloadip -i 198.3.11.7 --open True
 ```
 
 
 To find information about a phone number run the file like you see below, be sure to start with the country code of that phone number:
 
-```
+```sh
 python route.py payloadnum -n +2349083513047
-```
-
-or
-
-```
+# or
 python route.py payloadnum --number +2349083513047
 ```
 
 
 To see positional argument and flags available run the file without any flag or positional argument like:
 
-```
+```sh
 python route.py
 ```
 
@@ -118,12 +109,13 @@ See more documentations <a href="https://dipense.readthedocs.io">here!</a>
 
 ## Useful links
 
-- Documentation: https://dipense.readthedocs.io
-- Pypi Release: https://pypi.org/project/dipense
-- Docker Release: https://hub.docker.com/r/usmanmusa/dipense
+-   Documentation: https://dipense.readthedocs.io
+-   Repository: https://github.com/usmanmusa1920/dipense
+-   Docker-hub Release: https://hub.docker.com/r/usmanmusa/dipense
+-   PYPI Release: https://pypi.org/project/flask-unity
 
 ## Build Status
-- version 0.1.2
+- version 0.1.5
 
 ## DiPense at a glance (docker)
 
@@ -132,3 +124,5 @@ See more documentations <a href="https://dipense.readthedocs.io">here!</a>
 ## DiPense at a glance (pypi)
 
 ![DiPense at a glance](docs/library/media/dipense-terminal.png)
+
+Pull requests are welcome

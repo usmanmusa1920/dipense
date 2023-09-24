@@ -1,23 +1,23 @@
 version: '3.7'
 
 services:
-  dipense_gunicorn:
-    volumes:
-      - static:/static
-    env_file:
-      - .env
-    build:
-      context: .
-    ports:
-      - "8000:8000"
-  nginx:
-    build: ./nginx
-    volumes:
-      - static:/static
-    ports:
-      - "80:80"
-    depends_on:
-      - dipense_gunicorn
-
+    dipense_gunicorn:
+        volumes:
+            - static:/static
+        env_file:
+            - .env
+        build:
+            context: .
+        ports:
+            - "8000:8000"
+    nginx:
+        build: ./nginx
+        volumes:
+            - static:/static
+        ports:
+            - "80:80"
+        depends_on:
+            - dipense_gunicorn
+            
 volumes:
-  static:
+    static:

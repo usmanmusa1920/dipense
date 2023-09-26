@@ -106,18 +106,18 @@ Useful links:
 Version Status
 ==============
 
-- version 0.1.4
+- version 0.1.5
 
 DiPense at a glance (docker)
 ============================
 
-.. image:: library/media/screen-shot.png
+.. image:: _static/screen-shot.png
   :width: 400
   :alt: Alternative text
 
 DiPense at a glance (pypi)
 ==========================
 
-.. image:: library/media/dipense-terminal.png
+.. image:: _static/dipense-terminal.png
   :width: 400
   :alt: Alternative text

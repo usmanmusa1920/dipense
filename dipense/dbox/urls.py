@@ -1,7 +1,7 @@
 from django.urls import path
-from box import GEO
-from box import SMTK
-from box import WH
+from .dinit import GEO
+from .dinit import SMTK
+from .dinit import WH
 
 
 app_name = 'trigger'
@@ -13,10 +13,10 @@ urlpatterns = [
     path(
         'icheckp', GEO.icheckp, name='icheckp'),
     path(
-        'map/<str:r2>', GEO.openMap, name='map'),
+        'map/<str:r2>', GEO.open_map, name='open_map'),
         
     path(
-        'whois', WH.site, name='howis'),
+        'whois', WH.site, name='who_is'),
     path(
         'coming/<str:pg>', WH.coming, name='coming'),
 ]

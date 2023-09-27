@@ -33,7 +33,38 @@ Release v\ |version|
     
 -------------------
 
-How me DiPense
+Usage (local)
+=============
+
+First clone the repository::
+
+    git clone https://github.com/usmanmusa1920/dipense
+
+Enter into the directory, which live in `dipense/dipense`::
+
+    cd dipense/dipense
+
+Create virtual environment::
+
+    python -m venv d_venv
+
+Activate virtual environment::
+
+    source d_venv/bin/activate
+
+Install requirements::
+
+    pip install -r requirements.txt
+
+Now run the development server by::
+
+    python manage.py runserver
+
+Visit the url address `http://localhost:8000`, use the below user credential to login!
+
+**Email:** mr_robot@mail.com **Password:** root1234
+
+Usage (Docker)
 ==============
 
 To use this tool you have to make sure you have **docker** install as well as **docker-compose**, also make sure you have nothing running on port **8000** and **80** because these ports are going to be use for the services
@@ -85,8 +116,8 @@ Contact Us
 
 Give away Hey you anonymous! any complaint that you have to, feel free to deliver to us or something you found which is not support to be, we will response at the earliest via github issue (by pull comment). Our mission is to make IT more enthusiastic and more fun to IT ally.
 
-Table of content
-----------------
+DiPense (PyPi)
+--------------
 
 .. toctree::
   :maxdepth: 2
@@ -102,11 +133,6 @@ Useful links:
 - `PYPI Release <https://pypi.org/project/dipense>`_
 
 - `Docker-hub Release <https://hub.docker.com/r/usmanmusa/dipense>`_
-
-Version Status
-==============
-
-- version 0.1.5
 
 DiPense at a glance (docker)
 ============================

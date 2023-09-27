@@ -1,3 +1,6 @@
+"""
+This is `dbox` (DiPenseBox) package
+"""
 from django.urls import reverse
 from django.contrib import messages
 from django.shortcuts import redirect

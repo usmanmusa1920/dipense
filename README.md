@@ -1,6 +1,19 @@
 
 # DiPense
 
+```sh
+@@@@@@@   @@@  @@@@@@@   @@@@@@@@  @@@  @@@   @@@@@@   @@@@@@@@  
+@@@@@@@@  @@@  @@@@@@@@  @@@@@@@@  @@@@ @@@  @@@@@@@   @@@@@@@@  
+@@!  @@@  @@!  @@!  @@@  @@!       @@!@!@@@  !@@       @@!       
+!@!  @!@  !@!  !@!  @!@  !@!       !@!!@!@!  !@!       !@!       
+@!@  !@!  !!@  @!@@!@!   @!!!:!    @!@ !!@!  !!@@!!    @!!!:!    
+!@!  !!!  !!!  !!@!!!    !!!!!:    !@!  !!!   !!@!!!   !!!!!:    
+!!:  !!!  !!:  !!:       !!:       !!:  !!!       !:!  !!:       
+:!:  !:!  :!:  :!:       :!:       :!:  !:!      !:!   :!:       
+ :::: ::   ::   ::        :: ::::   ::   ::  :::: ::    :: ::::  
+:: :  :   :     :        : :: ::   ::    :   :: : :    : :: :: 
+```
+
 An OSINT tool for IT ninjas
 
 [![Downloads Month Badge](https://static.pepy.tech/badge/dipense/month)](https://pypi.org/project/dipense)
@@ -10,7 +23,50 @@ An OSINT tool for IT ninjas
 [![Supported Versions Badge](https://img.shields.io/pypi/pyversions/dipense.svg)](https://pypi.org/project/dipense)
 [![Contributors](https://img.shields.io/github/contributors/usmanmusa1920/dipense.svg)](https://github.com/usmanmusa1920/dipense/graphs/contributors)
 
-# How me DiPense (Docker release)
+## Usage:: (local)
+
+First clone the repository
+
+```sh
+git clone https://github.com/usmanmusa1920/dipense
+```
+
+Enter into the directory, which live in `dipense/dipense`
+
+```sh
+cd dipense/dipense
+```
+
+Create virtual environment
+
+```sh
+python -m venv d_venv
+```
+
+Activate virtual environment
+
+```sh
+source d_venv/bin/activate
+```
+
+Install requirements
+
+```sh
+pip install -r requirements.txt
+```
+
+Now run the development server by:
+
+```sh
+python manage.py runserver
+```
+
+Visit the url address `http://localhost:8000`, use the below user credential to login!
+
+**Email:** mr_robot@mail.com **Password:** root1234
+
+## Usage:: (Docker release)
+
 To use this tool you have to make sure you have `docker` install as well as `docker-compose`, also make sure you have nothing running on port `8000` and `80` because these ports are going to be use for the services
 
 After that then you are to pull the image from docker with
@@ -39,7 +95,7 @@ docker-compose up --build
 
 Once that finish, you will notice in your terminal that it says you can reach it at `http://0.0.0.0:8000`, that one is a gunicorn server which doesn't serve static files, we recommend visiting it at port `80` which is an `Nginx` server that can serve static files, and it is a proxy to that gunicorn container.
 
-# How to use dipense (Pypi release)
+## Usage:: (Pypi release)
 
 First we recommend creating a virtual environment `python -m venv venv` and then activate it `source venv/bin/activate`
 

@@ -32,7 +32,10 @@ try:
 except:
     DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+try:
+    ALLOWED_HOSTS = ['*']
+except:
+    ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -47,8 +50,7 @@ INSTALLED_APPS = [
     
     # my apps
     'account.apps.AccountConfig',
-    'simtrack.apps.SimtrackConfig',
-    'icheckp.apps.IcheckpConfig',
+    'dbox.apps.DboxConfig',
 ]
 
 MIDDLEWARE = [

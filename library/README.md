@@ -1,6 +1,19 @@
 
 # DiPense
 
+```sh
+@@@@@@@   @@@  @@@@@@@   @@@@@@@@  @@@  @@@   @@@@@@   @@@@@@@@  
+@@@@@@@@  @@@  @@@@@@@@  @@@@@@@@  @@@@ @@@  @@@@@@@   @@@@@@@@  
+@@!  @@@  @@!  @@!  @@@  @@!       @@!@!@@@  !@@       @@!       
+!@!  @!@  !@!  !@!  @!@  !@!       !@!!@!@!  !@!       !@!       
+@!@  !@!  !!@  @!@@!@!   @!!!:!    @!@ !!@!  !!@@!!    @!!!:!    
+!@!  !!!  !!!  !!@!!!    !!!!!:    !@!  !!!   !!@!!!   !!!!!:    
+!!:  !!!  !!:  !!:       !!:       !!:  !!!       !:!  !!:       
+:!:  !:!  :!:  :!:       :!:       :!:  !:!      !:!   :!:       
+ :::: ::   ::   ::        :: ::::   ::   ::  :::: ::    :: ::::  
+:: :  :   :     :        : :: ::   ::    :   :: : :    : :: :: 
+```
+
 An OSINT tool for IT ninjas
 
 [![Downloads Month Badge](https://static.pepy.tech/badge/dipense/month)](https://pypi.org/project/dipense)
@@ -10,7 +23,8 @@ An OSINT tool for IT ninjas
 [![Supported Versions Badge](https://img.shields.io/pypi/pyversions/dipense.svg)](https://pypi.org/project/dipense)
 [![Contributors](https://img.shields.io/github/contributors/usmanmusa1920/dipense.svg)](https://github.com/usmanmusa1920/dipense/graphs/contributors)
 
-# How to use the library
+## Usage
+
 First we recommend creating a virtual environment `python -m venv venv` and then activate it `source venv/bin/activate`
 
 Once that finish now install the library using

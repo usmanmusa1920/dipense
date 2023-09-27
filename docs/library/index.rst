@@ -1,6 +1,6 @@
 
-DiPense - lib
-=============
+DiPense - library
+=================
 
 An OSINT tool for IT ninjas
 
@@ -33,8 +33,8 @@ Release v\ |version|
     
 -------------------
 
-How to use the library
-======================
+Usage
+=====
 
 First we recommend creating a virtual environment **python -m venv venv** and then activate it **source venv/bin/activate**
 
@@ -100,11 +100,6 @@ Useful links:
 - `PYPI Release <https://pypi.org/project/dipense>`_
 
 - `Docker-hub Release <https://hub.docker.com/r/usmanmusa/dipense>`_
-
-Version Status
-==============
-
-- version 0.1.5
 
 DiPense at a glance (docker)
 ============================

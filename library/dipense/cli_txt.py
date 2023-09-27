@@ -18,12 +18,9 @@ def _has_level_handler(logger: logging.Logger) -> bool:
     while current:
         if any(handler.level <= level for handler in current.handlers):
             return True
-
         if not current.propagate:
             break
-
         current = current.parent  # type: ignore
-
     return False
 
 
@@ -37,9 +34,8 @@ class _ColorStreamHandler(logging.StreamHandler):
             stream = None
         else:
             stream = colorama.AnsiToWin32(sys.stderr)
-
         super().__init__(stream)
-
+        
 
 def _log(type: str, message: str, *args: t.Any, **kwargs: t.Any) -> None:
     """Log a message to the 'werkzeug' logger.
@@ -59,7 +55,6 @@ def _log(type: str, message: str, *args: t.Any, **kwargs: t.Any) -> None:
 
         if not _has_level_handler(_logger):
             _logger.addHandler(_ColorStreamHandler())
-
     getattr(_logger, type)(message.rstrip(), *args, **kwargs)
 
 
@@ -70,12 +65,12 @@ if os.name == "nt":
         __import__("colorama")
     except ImportError:
         _log_add_style = False
-
         
+
 def _ansi_style(value: str, *styles: str) -> str:
     if not _log_add_style:
         return value
-
+    
     codes = {
         "bold": 1,
         "red": 31,
@@ -87,9 +82,10 @@ def _ansi_style(value: str, *styles: str) -> str:
 
     for style in styles:
         value = f"\x1b[{codes[style]}m{value}"
-
     return f"{value}\x1b[0m"
 
+
+getout = print
 
 def log_style(msg, *args, log='info', col=None):
     """
@@ -100,7 +96,6 @@ def log_style(msg, *args, log='info', col=None):
         >>> log_style('I am warning log', log='warning')
         >>> log_style('I am error log', log='error')
         >>> log_style('I am critical log', log='critical')
-
 
         # this two are thesame (inter-changebly), (use if text need to be bold)
         >>> log_style('I am error log of cyan(color) bold txt', 'cyan', log='error', col='bold')

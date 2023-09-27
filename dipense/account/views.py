@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from account.models import Messages
 from . import forms as acc_forms
-from box.default import default
+from dbox.default import default
 
 
 class Accnt:

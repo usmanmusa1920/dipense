@@ -5,7 +5,7 @@ import folium
 import geocoder
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from icheckp.models import IpPayloadRec
+from dbox.models import IpPayloadRec
 from .default import default
 
 
@@ -175,6 +175,6 @@ class ICHECKP:
     
     @staticmethod
     # @login_required
-    def openMap(request, r2):
+    def open_map(request, r2):
         map_file = 'map_' + str(r2) + '.html'
         return render(request, f'maps/{map_file}')

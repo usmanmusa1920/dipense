@@ -16,10 +16,7 @@
     your webbrowser, e.g
         _______________________________________________
         ICHECKP(autoOpenMap=True).icheckp('197.3.11.7')
-    
-usman@usman-TOSHIBA-NB510 in:~/Desktop/acode
- $ figlet -f Poison DiPense
-        
+
 @@@@@@@   @@@  @@@@@@@   @@@@@@@@  @@@  @@@   @@@@@@   @@@@@@@@  
 @@@@@@@@  @@@  @@@@@@@@  @@@@@@@@  @@@@ @@@  @@@@@@@   @@@@@@@@  
 @@!  @@@  @@!  @@!  @@@  @@!       @@!@!@@@  !@@       @@!       
@@ -31,24 +28,6 @@ usman@usman-TOSHIBA-NB510 in:~/Desktop/acode
  :::: ::   ::   ::        :: ::::   ::   ::  :::: ::    :: ::::  
 :: :  :   :     :        : :: ::   ::    :   :: : :    : :: :: 
 
-usman@usman-TOSHIBA-NB510 in:~/Desktop/acode
- $ figlet -f Sub-Zero DiPense
- _____     __     ______   ______     __   __     ______     ______    
-/\  __-.  /\ \   /\  == \ /\  ___\   /\ "-.\ \   /\  ___\   /\  ___\   
-\ \ \/\ \ \ \ \  \ \  _-/ \ \  __\   \ \ \-.  \  \ \___  \  \ \  __\   
- \ \____-  \ \_\  \ \_\    \ \_____\  \ \_\\"\_\  \/\_____\  \ \_____\ 
-  \/____/   \/_/   \/_/     \/_____/   \/_/ \/_/   \/_____/   \/_____/ 
-                                                                       
-usman@usman-TOSHIBA-NB510 in:~/Desktop/acode
- $ figlet -f 3D-ASCII DiPense
- ________  ___  ________  _______   ________   ________  _______      
-|\   ___ \|\  \|\   __  \|\  ___ \ |\   ___  \|\   ____\|\  ___ \     
-\ \  \_|\ \ \  \ \  \|\  \ \   __/|\ \  \\ \  \ \  \___|\ \   __/|    
- \ \  \ \\ \ \  \ \   ____\ \  \_|/_\ \  \\ \  \ \_____  \ \  \_|/__  
-  \ \  \_\\ \ \  \ \  \___|\ \  \_|\ \ \  \\ \  \|____|\  \ \  \_|\ \ 
-   \ \_______\ \__\ \__\    \ \_______\ \__\\ \__\____\_\  \ \_______\
-    \|_______|\|__|\|__|     \|_______|\|__| \|__|\_________\|_______|
-                                                 \|_________|   
 """
 
 
@@ -72,9 +51,8 @@ __description__ = 'An OSINT tool for it ninjas.'
 from .icheckp import ICHECKP
 from .default import default
 from .default import Default
-
-
-getout = print
+from .cli_txt import getout
+from .cli_txt import log_style
 
 
 # def icheckp(ip, autoOpenMap=False):
@@ -83,13 +61,15 @@ getout = print
 
 def ipLoad():
     # prog is the name of the program, default=sys.argv[0]
-    parser = argparse.ArgumentParser(prog='scan an ip address', description='This scan an ip address!')
-    
+    parser = argparse.ArgumentParser(
+        prog='scan an ip address', description='This scan an ip address!')
     # metavar make the -help to look cleaan
-    parser.add_argument('--ip', '-i', required=True, type=str, metavar='', help='What is the ip address?')
-    parser.add_argument('--open', '-o', default=False, required=False, type=str, metavar='', help='This will automatic open your map in web browser, it is a boolean of `True or False`')
-    parser.add_argument(dest='payloadip', default='payloadip', type=str, metavar='', help='The payload is to find an ip address infomation')
-    
+    parser.add_argument(
+        '--ip', '-i', required=True, type=str, metavar='', help='What is the ip address?')
+    parser.add_argument(
+        '--open', '-o', default=False, required=False, type=str, metavar='', help='This will automatic open your map in web browser, it is a boolean of `True or False`')
+    parser.add_argument(
+        dest='payloadip', default='payloadip', type=str, metavar='', help='The payload is to find an ip address infomation')
     args = parser.parse_args()
     ICHECKP(autoOpenMap=args.open).icheckp(args.ip)
   
@@ -118,7 +98,7 @@ def payloads(helper):
     lst_2 = [dft+i for i in lst_1]
   
     if len(sys.argv) == 1:
-        getout('\n Include a positional argument!')
+        log_style('\n Include a positional argument!', log='info')
         getout(helper())
     elif sys.argv[1] not in lst_2:
         getout(f'\n `{sys.argv[1]}` is not a valid positional argument!')

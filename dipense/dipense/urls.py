@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import render
-from box.default import default
+from dbox.default import default
 
 
 def staticView(request):
@@ -31,7 +31,7 @@ def staticView(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', staticView, name='landing'),
-    path('', include('box.urls')),
+    path('', include('dbox.urls')),
     path('', include('account.urls')),
 ]
 

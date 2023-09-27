@@ -6,7 +6,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import update_session_auth_hash
 from .forms import PasswordChangeForm
-from box.default import default
+from dbox.default import default
 
 
 class LoginCustom(LoginView):

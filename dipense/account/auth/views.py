@@ -5,6 +5,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 from .forms import PasswordChangeForm
 from dbox.default import default
 
@@ -39,6 +40,7 @@ class LogoutCustom(LoginRequiredMixin ,LogoutView):
         return context
     
 
+@login_required
 def change_password(request):
     """change password view"""
     if request.user.is_authenticated:
@@ -47,7 +49,7 @@ def change_password(request):
             form.save()
             update_session_auth_hash(request, form.user)
             messages.success(request, f'That sound great {request.user.first_name}, your password has been changed')
-            return redirect(reverse('landing'))
+            return redirect(reverse('account:landing'))
         else:
             context = {
                 'default': default(),

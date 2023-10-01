@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 from datetime import datetime
+from django.contrib import messages
 
 
 class Default:
@@ -24,6 +26,13 @@ class Default:
         'the_year': the_year,
         }
         return data
+    
+    # def flash_msg(request):
+    #     if request.user.is_authenticated:
+    #         pass
+    #     else:
+    #         messages.success(request, f'Login first!')
+
     sites_list = [
         'site:facebook.com',
         'site:twitter.com',
@@ -37,7 +46,6 @@ class Default:
     
 def default():
     """
-    This is the function (shortcut of `Default.default') that we will call in some of our site view
-    instead of calling the `Default.default' which will make our code so large
+    This is the function (shortcut of `Default.default') that we will call in some of our site view, instead of calling the `Default.default' which will make our code so large
     """
     return Default.default

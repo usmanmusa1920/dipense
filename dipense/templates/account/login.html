@@ -19,16 +19,15 @@
   
   <form method="POST" class="form">
     {% csrf_token %}
-    <input type="email" name="username" placeholder="Enter email address" required>
-    <input type="password" name="password" placeholder="Enter password" required>
-
     {% if form.errors %}
       <!-- <p>{{form.new_password2.errors}}</p> -->
       <p><i><strong><small>--- Please enter a correct email address and password. Note that both fields may be case-sensitive.</small></strong></i></p>
     {% endif %}
+    <input type="email" name="username" placeholder="Enter email address" required>
+    <input type="password" name="password" placeholder="Enter password" required>
     <button type="submit">submit</button>
   </form>
-
+  
   <h1>
     <a href="{% url 'account:signup' %}" class="peace">signup</a>
   </h1>

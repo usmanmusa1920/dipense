@@ -30,10 +30,9 @@
           <div class="anonymous">
             <div>
               {% if request.user.is_authenticated %}
-                <!-- <img src="{{request.user.image.url}}" alt="" srcset=""> -->
-                <img src="{% static 'media/anonymous.jpg' %}" alt="" srcset="">
+                <img src="{{request.user.image.url}}" alt="" srcset="">
               {% else %}
-                <img src="{% static 'media/user.png' %}" alt="" srcset="">
+                <img src="{% static 'media/anonymous.jpg' %}" alt="" srcset="">
               {% endif %}
             </div>
           </div>
@@ -44,14 +43,14 @@
           {% endif %}
         </span>
 
-        <a href="{% url 'landing' %}"><p>DiPense</p></a>
+        <a href="{% url 'account:landing' %}"><p>DiPense</p></a>
         <a href="{% url 'trigger:simtrack' %}"><p>Sim track</p></a>
         <a href="{% url 'trigger:icheckp' %}"><p>i-check-p</p></a>
 
         <h1 class="category">Feed</h1>
         <br>
         <a href="{% url 'trigger:coming' 'contact' %}"><p>Contact Us</p></a>
-        <a href="{% url 'trigger:coming' 'about' %}"><p>About</p></a>
+        <a href="{% url 'account:about' %}"><p>About</p></a>
 
         <h1 class="category">Auth</h1>
         <br>
@@ -93,7 +92,7 @@
                 <span>D</span>
               </h1>
             </a>
-            <a href="{% url 'landing' %}">
+            <a href="{% url 'account:landing' %}">
               <h1 class="logo">
                 iPense
               </h1>
@@ -101,7 +100,7 @@
           </div>
 
           <div class="header_right">
-            <a href="{% url 'trigger:coming' 'about' %}"><h4>About</h4></a>
+            <a href="{% url 'account:about' %}"><h4>About</h4></a>
           </div>
         </div>
       </div>
@@ -117,14 +116,14 @@
             {% endif %}
 
             <div class="long">
-              <a href="{% url 'trigger:coming' 'Stat' %}">
+              <a href="{% url 'trigger:stats' %}">
                 <img src="{% static 'media/verified.png' %}" alt="" srcset="">
                 Stat
               </a>
               <a href="{% url 'trigger:who_is' %}">
                 Who is
               </a>
-              <a href="{% url 'trigger:coming' 'vuln' %}">
+              <a href="{% url 'trigger:vuln' %}">
                 <img src="{% static 'media/link.png' %}" alt="" srcset="">
                 vuln
               </a>

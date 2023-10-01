@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import phonenumbers
 from phonenumbers import geocoder, carrier, timezone
 from django.shortcuts import render
@@ -8,7 +9,7 @@ from .default import Default, default
 
 class STRACK:
     @staticmethod
-    # @login_required
+    @login_required
     def simtrack(request):
         p_num = request.GET.get('num')
         amp="&amp;"

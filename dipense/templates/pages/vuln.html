@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  <title>DiPense | vuln</title>
+{% endblock title %}
+
+
+{% block form %}
+  <form id="form">
+    <input type="text" name="name" placeholder="Vuln type" required>
+    <textarea name="feedback" placeholder="Any (optional)" required></textarea>
+    <button type="submit">Trigger</button>
+  </form>
+{% endblock form %}
+
+
+{% block result %}
+  <span>
+    <p>Being me a hacker, my first goal when I want to hack is to gather information enough as I can about my target</p>
+    <br>
+
+    <h3>Status: loading</h3>
+    <br>
+    <a href="{% url 'trigger:coming' 'edit profile' %}" class="danger">End yourself</a>
+    <li><b>Uptime:</b> {{uptime}}</li>
+    <li>
+      <b>Stats:</b>
+      <pre>{{sysinfo}}
+      </pre>
+    </li>
+  </span>
+{% endblock result %}

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 This is `dbox` (DiPenseBox) package
 """
@@ -26,4 +27,4 @@ class SMTK(STRACK):
 class WH(WH):
     def coming(request, pg):
         messages.success(request, f'This page ({pg}) is coming soon!')
-        return redirect(reverse('landing'))
+        return redirect(reverse('account:landing'))

@@ -2,36 +2,24 @@
 
 
 {% block title %}
-  <title>DiPense</title>
+  <title>DiPense - about</title>
 {% endblock title %}
 
 
 {% block form %}
-  <h1>How me DiPense</h1>
+  <h1>About DiPense</h1>
   <p><strong><i>*** Welcome to DiPense ***</i></strong> an OSINT tool for IT ninjas, for reconnoitring phone number, ip address, DNS, and others. To be honest the application is free, beware with us your intent matter.</p>
-
-    {% if request.user.is_authenticated == False %}
-      <p>
-        <b>Default</b> login credentials for admin user
-        <br>
-        <b>Email:</b> mr_robot@mail.com
-        <br>
-        <b>password:</b> root1234
-      </p>
-
-      <h1><a href="{% url 'account:auth:login' %}" class="peace">Login</a> first or <a href="{% url 'account:signup' %}" class="peace">SignUp</a></h1>
-    {% endif %}
   <!-- {% comment %}
   {% endcomment %} -->
+  <h1>Get to us!</h1>
+  <form action="mailto:usmanmusa1920@gmail.com" method="POST" class="form">
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    <textarea id="feedback" name="feedback" placeholder="Enter your feedback" required></textarea>
+    <button type="submit">Send</button>
+  </form>
 
   <p><strong>DiPense</strong> system do not take any of your information or data in any way or the other, to find or find some information and retrieve in any way illegally without the permission of the owner.</p>
-
-  <p>We do enhance foot print of a phone number belongs to also an ip address. Although using this tool may or may not be illegal at some certain circumstance depending on the use cases.</p>
-  
-  <p><b>Give away</b> Hey you anonymous!, mass scan is a portion of the end result, that will give a reference and some links that are/may be associated with the cellular number was payloaded into DiPense system.</p>
-  
-  <h3>Local scan</h3>
-  <p>It (local scan) is a portion (out come) of your payload, which will give a local format of the number that payloaded into the system, without showing the plus sign (+) i.e negating it unlike in internationall format.</</p>
 {% endblock form %}
 
 {% block result %}

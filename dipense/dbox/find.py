@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 from time import ctime
 from pathlib import Path
@@ -13,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 class ICHECKP:
-    # @login_required
+    @login_required
     def icheckp(request):
         i_num = request.GET.get('ip_num')
         amp = '&amp;'
@@ -174,7 +175,7 @@ class ICHECKP:
         return render(request, 'pages/icheckp.html', context)
     
     @staticmethod
-    # @login_required
+    @login_required
     def open_map(request, r2):
         map_file = 'map_' + str(r2) + '.html'
         return render(request, f'maps/{map_file}')

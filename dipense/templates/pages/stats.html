@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  <title>DiPense | stats</title>
+{% endblock title %}
+
+
+{% block form %}
+  <form id="form">
+    <br>
+    <br>
+    <pre>{{linux}}</pre>
+    <br>
+    <br>
+  </form>
+{% endblock form %}
+
+
+{% block result %}
+  <span>
+    <p>Being me a hacker, my first goal when I want to hack is to gather information enough as I can about my target</p>
+    <br>
+
+    <h3>Status: loading</h3>
+    <br>
+    <a href="{% url 'trigger:coming' 'edit profile' %}" class="danger">End yourself</a>
+    <li><b>Uptime:</b> {{uptime}}</li>
+    <li>
+      <b>Stats:</b>
+      <pre>{{sysinfo}}
+      </pre>
+    </li>
+  </span>
+{% endblock result %}

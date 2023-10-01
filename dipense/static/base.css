@@ -689,7 +689,19 @@ body{
   background: grey;
 }
 
-.form input{
+#form{
+  width: 90%;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  overflow: auto;
+  color: wheat;
+}
+
+.form input, .form textarea{
   width: 90%;
   height: 40px;
   padding: 5px;
@@ -699,9 +711,32 @@ body{
   margin: 3px 0;
 }
 
+#form input, #form textarea{
+  width: 90%;
+  height: 40px;
+  padding: 5px;
+  border: solid wheat 3px;
+  outline: none;
+  border-radius: 5px;
+  margin: 3px 0;
+  background: black;
+  color: wheat;
+}
+
 .form button{
   color: white;
   border: none;
+  outline: none;
+  border-radius: 5px;
+  background: black;
+  width: fit-content;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+#form button{
+  color: wheat;
+  border: solid wheat 3px;
   outline: none;
   border-radius: 5px;
   background: black;

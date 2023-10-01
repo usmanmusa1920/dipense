@@ -1,33 +1,20 @@
-# NUMBER 1
-
-
 #!/bin/bash
-
-# echo "<html>"
-# echo "    <head>"
-# echo "        <title>index</title>"
-# echo "    </head>"
-# echo "    <body>"
-# echo "        nn"
-# echo "    </body>"
-# echo "</html>"
-
 cat << _EOF_
-    <html>
-        <head>
-            <title>index</title>
-        </head>
-        <body>
-            nn
-        </body>
-    </html>
+<html>
+    <head>
+        <title>index</title>
+    </head>
+    <body>
+        System info
+    </body>
+</html>
 _EOF_
 
+echo
 
 who
-who
-who
 
+echo
 
 # NUMBER 2
 
@@ -53,7 +40,12 @@ report_home_space () {
 }
 
 report_uptime
+
+echo
+
 report_disk_space
+
+echo
 # ERROR
 # report_home_space
 
@@ -65,10 +57,6 @@ report_disk_space
 
 
 sudo TIME_STAMP
-
-
-
-
 
 
 # NUMBER 3
@@ -92,10 +80,6 @@ fi
 # NB:
 # 0 is positive answer
 # between 1 - 255 is negative answer
-
-
-
-
 
 
 # NUMBER 4

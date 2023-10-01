@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 import whois
@@ -7,7 +8,7 @@ from account.models import WhoisPayloadRec
 
 class WH:
     @staticmethod
-    # @login_required
+    @login_required
     def site(request):
         domain = request.GET.get('domain')
         

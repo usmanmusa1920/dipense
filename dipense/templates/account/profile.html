@@ -11,15 +11,14 @@
     <div class="anonymous">
       <div>
         {% if request.user.is_authenticated %}
-          <!-- <img src="{{request.user.image.url}}" alt="" srcset=""> -->
-          <img src="{% static 'media/anonymous.jpg' %}" alt="" srcset="">
+          <img src="{{request.user.image.url}}" alt="" srcset="">
         {% else %}
-          <img src="{% static 'media/user.png' %}" alt="" srcset="">
+          <img src="{% static 'media/anonymous.jpg' %}" alt="" srcset="">
         {% endif %}
       </div>
     </div>
   </span>
-  <!-- <a href="{% url 'account:mask' %}" class="peace">Edit image</a> -->
+  <a href="{% url 'account:mask' %}" class="peace">Edit image</a>
 
   <h1>{{request.user.first_name}} {{request.user.last_name}}</h1>
   <p>My bio is: I'm <b>{{request.user.username}}</b> an IT ninja</p>
@@ -31,9 +30,6 @@
     <p>Being me a hacker, my first goal when I want to hack is to gather information enough as I can about my target</p>
     <br>
 
-    <h3>Status: loading</h3>
-    <br>
-    <a href="{% url 'trigger:coming' 'edit profile' %}" class="danger">End yourself</a>
-    <li><b>Uptime:</b> 2 days up</li>
+    <h3>Status: <a href="{% url 'trigger:stats' %}" class="danger">Stats</a></h3>
   </span>
 {% endblock result %}

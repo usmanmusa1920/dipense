@@ -531,13 +531,13 @@
     "model": "account.useraccount",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$260000$k9ouNDcGOVkq4DDt1KfXvE$3onFMKzw9uTvtNoczfSjneNQD3Dtc5azxHUO4qfhEwE=",
+        "password": "pbkdf2_sha256$600000$JpL7pBvWPa4lciibmt4K98$V2FSTZGwQuxeJYgnwTIrLjNpduKxLf3z27EjsiS64x8=",
         "last_login": null,
         "first_name": "Ninja",
         "last_name": "Robot",
         "username": "mr-robot",
         "email": "mr_robot@mail.com",
-        "image": "user.png",
+        "image": "anonymous.jpg",
         "is_active": true,
         "is_staff": true,
         "is_superuser": true

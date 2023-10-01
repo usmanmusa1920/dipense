@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import json
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+with open('config.json') as config_file:
+    config = json.load(config_file)
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,18 +28,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 try:
     SECRET_KEY = os.getenv('SECRET_KEY')
 except:
-    SECRET_KEY = 'django-insecure-9v9#c_55ie6onmnfai&^k_w(=u&kzcds7@02unczl(adyn(y8m'
-
+    SECRET_KEY = config['SECRET_KEY']
+    
 # SECURITY WARNING: don't run with debug turned on in production!
 try:
     DEBUG = os.getenv('DEBUG_VALUE')
 except:
-    DEBUG = True
+    DEBUG = config['DEBUG_VALUE']
 
 try:
     ALLOWED_HOSTS = ['*']
 except:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = config['ALLOWED_HOSTS']
 
 
 # Application definition
@@ -147,7 +151,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 LOGIN_URL = 'account:auth:login'
-LOGIN_REDIRECT_URL = 'landing'
+LOGIN_REDIRECT_URL = 'account:landing'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

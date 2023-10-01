@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils import timezone
+from PIL import Image
 from django.conf import settings
 
 
@@ -49,7 +50,7 @@ class UserAccount(AbstractBaseUser):
     last_name = models.CharField(max_length=100, unique=False)
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(max_length=255, unique=True)
-    image = models.ImageField(default='user.png', upload_to='profile_pics')
+    image = models.ImageField(default='anonymous.jpg', upload_to='profile_pics')
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

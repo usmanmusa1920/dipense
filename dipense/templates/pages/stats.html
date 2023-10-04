@@ -24,12 +24,23 @@
 
     <h3>Status: loading</h3>
     <br>
+    <form action="{% url 'trigger:stats' %}" method="post">
+      {% csrf_token %}
+      <input type="password" name="sudo_pwd" placeholder="Sudo password here ..." required>
+      <button type="submit">sudo</button>
+    </form>
+    <br>
     <a href="{% url 'trigger:coming' 'edit profile' %}" class="danger">End yourself</a>
-    <li><b>Uptime:</b> {{uptime}}</li>
-    <li>
-      <b>Stats:</b>
-      <pre>{{sysinfo}}
-      </pre>
-    </li>
+    {% if uptime %}
+      <li><b>Uptime:</b> {{uptime}}</li>
+    {% endif %}
+
+    {% if sysinfo %}
+      <li>
+        <b>Stats:</b>
+        <pre>{{sysinfo}}
+        </pre>
+      </li>
+    {% endif %}
   </span>
 {% endblock result %}

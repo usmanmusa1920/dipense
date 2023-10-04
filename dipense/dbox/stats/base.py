@@ -9,13 +9,17 @@ BASE_DIR = Path(__file__).resolve().parent
 # print(BASE_DIR)
 
 
-def up(*args):
+def up(*args, pwd: str = False):
+    if pwd:
+        sp.run(['echo', pwd, '|', 'sudo', '-S', 'ls'])
     sp.run(['make'])
     up = sp.run(list(args), capture_output=True, text=True).stdout
     return up
 
 
-def stats(file: str, ext: str = 'a'):
+def stats(file: str, pwd: str = False, ext: str = 'a'):
+    if pwd:
+        sp.run(['echo', pwd, '|', 'sudo', '-S', 'ls'])
     if ext == 'a':
         _ext = '.sh'
     elif ext == 'b':

@@ -97,3 +97,10 @@ def about(request):
         'default': default(),
     }
     return render(request, 'account/about.html', context)
+
+
+def contact(request):
+    context = {
+        'default': default(),
+    }
+    return render(request, 'account/contact.html', context)

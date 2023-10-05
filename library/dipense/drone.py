@@ -28,7 +28,8 @@ def numLoad():
         num_parse = phonenumbers.parse(p_num, None)
         num_valid = phonenumbers.is_valid_number(num_parse)
         p_nation = phonenumbers.format_number(num_parse, phonenumbers.PhoneNumberFormat.NATIONAL)
-        inter_nation = phonenumbers.format_number(num_parse, phonenumbers.PhoneNumberFormat.INTERNATIONAL)
+        inter_nation = phonenumbers.format_number(
+            num_parse, phonenumbers.PhoneNumberFormat.INTERNATIONAL)
         p_e164 = phonenumbers.format_number(num_parse, phonenumbers.PhoneNumberFormat.E164)
         p_geo = geocoder.description_for_number(num_parse, 'en')
         p_carr = carrier.name_for_number(num_parse, 'en')

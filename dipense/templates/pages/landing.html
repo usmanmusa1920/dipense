@@ -7,7 +7,8 @@
 
 
 {% block form %}
-  <h1>How me DiPense</h1>
+  <!-- <h1></h1> -->
+  <h1>An OSINT tool for IT ninjas</h1>
   <p><strong><i>*** Welcome to DiPense ***</i></strong> an OSINT tool for IT ninjas, for reconnoitring phone number, ip address, DNS, and others. To be honest the application is free, beware with us your intent matter.</p>
 
   <pre class="dipense">
@@ -23,17 +24,17 @@
     :: :  :   :     :        : :: ::   ::    :   :: : :    : :: ::
   </pre>
 
-    {% if request.user.is_authenticated == False %}
-      <p>
-        <b>Default</b> login credentials for admin user
-        <br>
-        <b>Email:</b> mr_robot@mail.com
-        <br>
-        <b>password:</b> root1234
-      </p>
+  {% if request.user.is_authenticated == False %}
+    <p>
+      <b>Default</b> login credentials for admin user
+      <br>
+      <b>Email:</b> mr_robot@mail.com
+      <br>
+      <b>password:</b> root1234
+    </p>
 
-      <h1><a href="{% url 'account:auth:login' %}" class="peace">Login</a> first or <a href="{% url 'account:signup' %}" class="peace">SignUp</a></h1>
-    {% endif %}
+    <h1><a href="{% url 'account:auth:login' %}" class="peace">Login</a> first or <a href="{% url 'account:signup' %}" class="peace">SignUp</a></h1>
+  {% endif %}
   <!-- {% comment %}
   {% endcomment %} -->
 

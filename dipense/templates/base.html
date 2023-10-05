@@ -49,8 +49,8 @@
 
         <h1 class="category">Feed</h1>
         <br>
-        <a href="{% url 'trigger:coming' 'contact' %}"><p>Contact Us</p></a>
         <a href="{% url 'account:about' %}"><p>About</p></a>
+        <a href="{% url 'account:contact' %}"><p>Contact Us</p></a>
 
         <h1 class="category">Auth</h1>
         <br>
@@ -118,7 +118,7 @@
             <div class="long">
               <a href="{% url 'trigger:stats' %}">
                 <img src="{% static 'media/verified.png' %}" alt="" srcset="">
-                Stat
+                Stats
               </a>
               <a href="{% url 'trigger:who_is' %}">
                 Who is

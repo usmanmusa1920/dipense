@@ -26,13 +26,16 @@
     <br>
     <form action="{% url 'trigger:stats' %}" method="post">
       {% csrf_token %}
+      <p>Make sure to put your real sudo password, else it will hang you</p>
       <input type="password" name="sudo_pwd" placeholder="Sudo password here ..." required>
       <button type="submit">sudo</button>
     </form>
     <br>
     <a href="{% url 'trigger:coming' 'edit profile' %}" class="danger">End yourself</a>
+    <div class="line"></div>
     {% if uptime %}
       <li><b>Uptime:</b> {{uptime}}</li>
+      <div class="line"></div>
     {% endif %}
 
     {% if sysinfo %}
@@ -41,6 +44,7 @@
         <pre>{{sysinfo}}
         </pre>
       </li>
+      <div class="line"></div>
     {% endif %}
   </span>
 {% endblock result %}

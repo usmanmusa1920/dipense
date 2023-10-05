@@ -3,7 +3,6 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from account.models import Messages
 from .default import default
 from .stats.base import up, stats as stat
 
@@ -12,11 +11,14 @@ from .stats.base import up, stats as stat
 def stats(request):
     if request.method == 'POST':
         pwd = request.POST['sudo_pwd']
-        print(pwd)
+        
+        u = up('uptime', '-p', pwd=pwd, req=request)
+        s1 = stat('sysinfo', pwd=pwd, req=request)
+        s2 = stat('linux')
         context = {
-            'uptime': up('uptime', '-p', pwd=pwd),
-            'sysinfo': stat('sysinfo', pwd),
-            'linux': stat('linux', pwd),
+            'uptime': u,
+            'sysinfo': s1,
+            'linux': s2,
             # 'uptime': up('uptime'),
             'default': default()
         }
@@ -33,10 +35,15 @@ def vuln(request):
     if request.method == 'POST':
         pwd = request.POST['sudo_pwd']
         print(pwd)
+
+        u = up('uptime', '-p', pwd=pwd, req=request)
+        s1 = stat('sysinfo', pwd, req=request)
+        s2 = stat('linux', pwd, req=request)
+        print('pop', u, 123)
         context = {
-            'uptime': up('uptime', '-p', pwd=pwd),
-            'sysinfo': stat('sysinfo', pwd),
-            'linux': stat('linux', pwd),
+            'uptime': u,
+            'sysinfo': s1,
+            'linux': s2,
             # 'uptime': up('uptime'),
             'default': default()
         }

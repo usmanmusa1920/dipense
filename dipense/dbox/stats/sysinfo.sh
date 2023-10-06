@@ -1,79 +1,53 @@
 #!/bin/bash
-cat << _EOF_
-<html>
-    <head>
-        <title>index</title>
-    </head>
-    <body>
-        System info
-    </body>
-</html>
-_EOF_
+home="$HOME"
 
 echo
-
+echo -n "Who: "
+echo
 who
-
 echo
 
-# NUMBER 2
-
-# Shell function are a way to group command for later execution using a single name for the group. They are executed just like a regular command, when a name of a function is called the list of commandassociated within that function will execute
+# Shell function are a way to group command for later execution using a single name for the group. They are executed just like a regular command, when a name of a function is called the list of command associated within that function will execute.
 
 report_uptime () {
-    echo -n "Report up_time "
+    # This report system up time of running
+    echo -n "Report up time: "
+    echo
     uptime
     return
 }
 
 report_disk_space () {
-    echo -n "Report disk "
+    # Function for showing system disk space
+    echo -n "Report disk: "
+    echo
     df -h
     return
 }
 
 report_home_space () {
-    echo -n "Report home "
+    # This function display system usage for home dir
+    echo -n "Report home: "
+    echo
+    du -sh $HOME # or
     # du -sh /home/*
-    du -sh $HOME
     return
 }
 
 report_uptime
-
 echo
-
 report_disk_space
-
 echo
-# ERROR
 # report_home_space
-
 # -------- OR -------
-
-"$(report_uptime)"
-"$(report_disk_space)"
+# "$(report_uptime)"
+# echo
+# "$(report_disk_space)"
+# echo
 # "$(report_home_space)"
 
 
-sudo TIME_STAMP
-
-
-# NUMBER 3
-
-# if statement is called branching
-
-x=8
-if [ $x = 7 ]; then
-     echo "Equal to 7";
-elfi [[ $x == 8 ]]; then
-    echo "0"
-else
-    echo "Does not equal";
-fi
-
-# to see if whether a command you type on terminal is executed without error, type 
-# echo $?
+# To see if whether a command you type on terminal is executed without error, type `echo $?` (it is return code)
 # if it shows 0, that mean "no error i.e true"
 # if it shows 1 or any in between 1 - 255, that mean "error occured i.e false"
 
@@ -82,8 +56,6 @@ fi
 # between 1 - 255 is negative answer
 
 
-# NUMBER 4
-
 # man test
 
 # with test command they are in -f, -e, -eq, -x, etc
@@ -91,3 +63,23 @@ fi
 
 # with compound command they are in &&, ||, !, etc
 # compound command usually have double opening and closing bracket [[ ]]
+# Check command-line argument
+
+
+if [ "$1" == "baby" ]; then
+    if [ -f "baby.sh" ]; then
+        . baby.sh
+    else
+        echo
+    fi
+elif [ "$1" == "html" ]; then
+    if [ -f "html.sh" ]; then
+        . html.sh
+    else
+        echo
+    fi
+elif [ "$1" == "em" ]; then
+    echo
+else
+    echo "Failed to run file specified ($1)."
+fi

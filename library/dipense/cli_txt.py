@@ -38,7 +38,7 @@ class _ColorStreamHandler(logging.StreamHandler):
         
 
 def _log(type: str, message: str, *args: t.Any, **kwargs: t.Any) -> None:
-    """Log a message to the 'werkzeug' logger.
+    """Log a message to the 'dipense' logger.
 
     The logger is created the first time it is needed. If there is no
     level set, it is set to :data:`logging.INFO`. If there is no handler
@@ -48,7 +48,7 @@ def _log(type: str, message: str, *args: t.Any, **kwargs: t.Any) -> None:
     global _logger
 
     if _logger is None:
-        _logger = logging.getLogger("werkzeug")
+        _logger = logging.getLogger("dipense")
 
         if _logger.level == logging.NOTSET:
             _logger.setLevel(logging.INFO)
@@ -103,19 +103,6 @@ def log_style(msg, *args, log='info', col=None):
 
         # this just change color to magenta
         >>> log_style('I am error log of magenta(color) bold txt', 'bold', log='error', col='magenta')
-
-        NOTE: look on `werkzeug.serving.log_request` for more status
-        
-    by default `werkzeug._internal._log` logging level is set to debug,
-    mean we only have to log with:
-        INFO
-        WARNING
-        ERROR
-        CRITICAL
-
-        it negate:
-            NOTSET
-            DEBUG
     """
     
     if col == None:

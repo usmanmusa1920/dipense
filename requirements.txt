@@ -15,6 +15,7 @@ MarkupSafe==2.1.3
 numpy==1.26.0
 phonenumbers==8.13.0
 Pillow==9.3.0
+psutil==5.9.5
 PySocks==1.7.1
 python-whois==0.8.0
 pytz==2023.3.post1

@@ -22,14 +22,14 @@
 
     <h3>Status: loading</h3>
     <br>
-    <form action="{% url 'trigger:vuln' %}" method="post">
+    <form>
       {% csrf_token %}
       <p>Make sure to put your real sudo password, else it will hang you</p>
       <input type="password" name="sudo_pwd" placeholder="Sudo password here ..." required>
       <button type="submit">sudo</button>
     </form>
     <br>
-    <a href="{% url 'trigger:coming' 'edit profile' %}" class="danger">End yourself</a>
+    <a href="{% url 'account:auth:logout' %}" class="danger">Logout</a>
     <div class="line"></div>
     {% if uptime %}
       <li><b>Uptime:</b> {{uptime}}</li>

@@ -5,29 +5,29 @@ from django.utils.html import format_html
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from .default import default
-from .stats.base import up, stats as stat
+from .stats.base import up, stats, sys_proc
 
 
 @login_required
-def stats(request):
-    messages.success(
-        request, format_html('Thank you, follow <a href="{}" class="peace">&nbsp;link</a>', reverse('account:profile')))
+def stats_view(request):
     if request.method == 'POST':
         pwd = request.POST['sudo_pwd']
         
         u = up('uptime', '-p', pwd=pwd, req=request)
-        s1 = stat('sysinfo', pwd=pwd, req=request)
-        s2 = stat('baby')
+        s1 = stats('sysinfo', pwd=pwd, req=request)
+        s2 = stats('baby')
         context = {
             'uptime': u,
             'sysinfo': s1,
             'baby': s2,
+            'sys_proc': sys_proc(),
             # 'uptime': up('uptime'),
             'default': default()
         }
     else:
         context = {
-            'baby': stat('baby'),
+            'baby': stats('baby'),
+            'sys_proc': sys_proc(),
             'default': default()
         }
     return render(request, 'pages/stats.html', context)
@@ -35,18 +35,10 @@ def stats(request):
 
 @login_required
 def vuln(request):
-    if request.method == 'POST':
-        pwd = request.POST['sudo_pwd']
-        u = up('uptime', '-p', pwd=pwd, req=request)
-        s1 = stat('sysinfo', pwd, req=request)
-        s2 = stat('baby', pwd, req=request)
-        context = {
-            'uptime': u,
-            'sysinfo': s1,
-            'baby': s2,
-            # 'uptime': up('uptime'),
-            'default': default()
-        }
-    else:
-        context = None
+    messages.success(
+        request, format_html('Sorry this page <a href="{}" class="peace">&nbsp;vuln</a> is under development', reverse('trigger:vuln')))
+    return redirect('trigger:stats')
+    context = {
+        'None': None,
+    }
     return render(request, 'pages/vuln.html', context)

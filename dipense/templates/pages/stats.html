@@ -31,7 +31,7 @@
       <button type="submit">sudo</button>
     </form>
     <br>
-    <a href="{% url 'trigger:coming' 'edit profile' %}" class="danger">End yourself</a>
+    <a href="{% url 'account:auth:logout' %}" class="danger">Logout</a>
     <div class="line"></div>
     {% if uptime %}
       <li><b>Uptime:</b> {{uptime}}</li>
@@ -46,5 +46,11 @@
       </li>
       <div class="line"></div>
     {% endif %}
+
+    <h3>System processes:</h3>
+    {% for sys in sys_proc %}
+      <li>{{sys}}</li>
+    {% endfor %}
+    <div class="line"></div>
   </span>
 {% endblock result %}

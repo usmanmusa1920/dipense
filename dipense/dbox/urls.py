@@ -2,7 +2,7 @@ from django.urls import path
 from .dinit import GEO
 from .dinit import SMTK
 from .dinit import WH
-from .views import stats, vuln
+from .views import stats_view, vuln
 
 
 app_name = 'trigger'
@@ -21,7 +21,7 @@ urlpatterns = [
     path(
         'coming/<str:pg>', WH.coming, name='coming'),
     path(
-        'stats', stats, name='stats'),
+        'stats', stats_view, name='stats'),
     path(
         'vuln', vuln, name='vuln'),
 ]

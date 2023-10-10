@@ -1,5 +1,4 @@
 #!/bin/bash
-
 cat << _EOF_
 <html>
     <head>

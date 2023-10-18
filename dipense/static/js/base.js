@@ -1,3 +1,7 @@
+function get_img_val(e){
+    document.querySelector('.sel_img').value = e.value;
+}
+
 
 function showMenu(){
     document.querySelector(".left").style.display = 'flex'

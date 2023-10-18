@@ -47,6 +47,7 @@
         <a href="{% url 'trigger:simtrack' %}"><p>Sim track</p></a>
         <a href="{% url 'trigger:icheckp' %}"><p>i-check-p</p></a>
         <a href="{% url 'trigger:crap_safe' %}"><p>Crap</p></a>
+        <a href="{% url 'trigger:crap_unsafe' %}"><p>Un-Crap</p></a>
 
         <h1 class="category">Feed</h1>
         <br>
@@ -56,7 +57,9 @@
         <h1 class="category">Auth</h1>
         <br>
         {% if request.user.is_authenticated %}
-          <a href="/admin"><p>Admin</p></a>
+          {% if request.user.is_superuser == True %}
+            <a href="/admin"><p>Admin</p></a>
+          {% endif %}
           <a href="{% url 'account:auth:change_password' %}"><p>Change password</p></a>
           <a href="{% url 'account:auth:logout' %}"><p>Logout</p></a>
         {% else %}

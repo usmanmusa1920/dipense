@@ -18,11 +18,14 @@ from .default import default
 # ls
 # steghide ectract -sf nothing.jpg
 # passwd: *****
-from .forms import SafeImage, UnsafeImage
+from .aging import age
+from .models import CrapSafe
+from .forms import SafeImage
 from .stats.base import auth_sudo
 from account.views import picture_name
 
 
+@login_required
 def catch_crap_safe(request):
     """
     This image_update function it will update the current login user profile image only
@@ -30,26 +33,23 @@ def catch_crap_safe(request):
 
     if request.method == 'POST':
         pwd = request.POST['sudo_pwd']
+        file_enc_pwd = request.POST['file_enc_pwd']
+        secret_file_path = request.POST['secret_file_path']
         p = auth_sudo(pwd=pwd, req=request)
         if p:
-            print(1)
             return p
-        print(2)
-        # try:
-        #     h = sp.run(f'steghide -h', shell=True)
-        #     if h.returncode > 0 or h.returncode != 0:
-        #         sp.run(f'apt install steghide -y', shell=True)
-        #     return True
-        # except:
-        #     pass
-
+        
         form = SafeImage(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             pic_name = picture_name(instance.image.name)
             instance.image.name = pic_name
+            instance.owner = request.user
+            instance.name = pic_name
             instance.save()
-            messages.success(request, f'Your profile mask has been updated!')
+            pt = instance.image.path
+            sp.run(f'echo {pwd} | sudo -S steghide embed -cf {pt} -ef {secret_file_path} -p {file_enc_pwd}', shell=True, capture_output=True)
+            messages.success(request, f'You just add crap')
             return redirect(reverse('account:profile'))
     else:
         form = SafeImage()
@@ -60,49 +60,36 @@ def catch_crap_safe(request):
     return render(request, 'pages/crap.html', context)
 
 
+@login_required
 def catch_crap_unsafe(request):
     """
     This image_update function it will update the current login user profile image only
     """
 
-    try:
-        h = sp.run(f'steghide -h', shell=True)
-        if h.returncode > 0 or h.returncode != 0:
-            sp.run(f'apt install steghide -y', shell=True)
-        return True
-    except:
-        pass
-    
-    # instead of hard coded the path of our default mask image like:
-    # '/home/user/Desktop/dipense/media/anonymous.jpg'
-    
-    # which will raise issues when deployed in a different environment
-    # we use the `Path(__file__).resolve().parent.parent` to give
-    # us this module parent of the parent path (which include the machine hostname)
-    # the main reason is that of `hostname` since every machine has it own, or
-    # user can make his own different, and then join it with `media/anonymous.jpg`
-    default_img_path = os.path.join(
-        Path(__file__).resolve().parent.parent, 'media/anonymous.jpg')
-    
-    # Here we check if the request method is POST then it will proceed, else it will return the user to the profile image update page together with his current profile image instance (image)
+    uncraped = CrapSafe.objects.filter(is_craped=False)
     if request.method == 'POST':
-        form = SafeImage(request.POST, request.FILES, instance=request.user)
-        r = request.user.image.path
-        if form.is_valid():
-            if r != default_img_path:
-                if os.path.exists(r):
-                    os.remove(r)
-            instance = form.save(commit=False)
-            pic_name = picture_name(instance.image.name)
-            instance.image.name = pic_name
-            instance.save()
-            messages.success(request, f'Your profile mask has been updated!')
-            return redirect(reverse('account:profile'))
-    else:
-        form = SafeImage(instance=request.user)
-        context = {
-            'form': form,
-            'default': default()
-        }
-    return render(request, 'pages/crap.html', context)
+        g_pwd = request.POST['guess_pass']
+        fn = request.POST['sel_img']
 
+        fn_splt = fn.split('/')[3]
+        target = CrapSafe.objects.filter(name=fn_splt).first()
+        if not target:
+            messages.warning(request, 'Query not found')
+            return redirect('/')
+        rp = target.image.path
+        if os.path.exists(rp):
+            y = sp.run(
+                f'steghide extract -sf {rp} -p {g_pwd}', shell=True, capture_output=True)
+            if y.returncode > 0 or y.returncode != 0:
+                messages.warning(request, 'Invalid passphrase!')
+                return redirect('trigger:crap_unsafe')
+        # target.is_craped = True
+        # target.save()
+        age()
+        messages.success(request, f'You just craped!!!')
+        return redirect(reverse('account:profile'))
+    context = {
+        'uncraped': uncraped,
+        'default': default(),
+    }
+    return render(request, 'pages/uncrap.html', context)

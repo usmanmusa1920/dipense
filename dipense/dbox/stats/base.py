@@ -18,8 +18,14 @@ def auth_sudo(pwd: str = False, req=None):
         p = sp.run(f'echo {pwd} | sudo -S uptime', shell=True)
         if p.returncode > 0 or p.returncode != 0:
             messages.warning(
-                req, format_html('Something bad, review sudo credentials, <a href="{}" class="peace">&nbsp;landing</a>', reverse('account:landing')))
-            return redirect(reverse('account:landing'))
+                req, format_html('Something bad, review sudo credentials, &nbsp;<a href="{}" class="peace">home</a>&nbsp;', reverse('account:landing')))
+            return redirect(req.path_info)
+        try:
+            h = sp.run(f'steghide --help', shell=True, capture_output=True)
+            if h.returncode > 0 or h.returncode != 0:
+                sp.run(f'echo {pwd} | sudo -S apt install steghide -y', shell=True)
+        except:
+            pass
         
 
 def up(*args, pwd: str = False, req=None):

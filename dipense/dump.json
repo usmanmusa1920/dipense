@@ -432,6 +432,42 @@
     }
 },
 {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add crap safe",
+        "content_type": 13,
+        "codename": "add_crapsafe"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change crap safe",
+        "content_type": 13,
+        "codename": "change_crapsafe"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete crap safe",
+        "content_type": 13,
+        "codename": "delete_crapsafe"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view crap safe",
+        "content_type": 13,
+        "codename": "view_crapsafe"
+    }
+},
+{
     "model": "contenttypes.contenttype",
     "pk": 1,
     "fields": {
@@ -528,10 +564,18 @@
     }
 },
 {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "dbox",
+        "model": "crapsafe"
+    }
+},
+{
     "model": "account.useraccount",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$600000$JpL7pBvWPa4lciibmt4K98$V2FSTZGwQuxeJYgnwTIrLjNpduKxLf3z27EjsiS64x8=",
+        "password": "pbkdf2_sha256$600000$5XKhQqGyVGvHMD4Csx3aFU$ezZx9lwA3XVZYl95/vUObSkoEdaj80GLH7Xkivqg3Tg=",
         "last_login": null,
         "first_name": "Ninja",
         "last_name": "Robot",

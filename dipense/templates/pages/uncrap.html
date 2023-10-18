@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  <title>DiPense | uncrap mask</title>
+{% endblock title %}
+
+
+{% block form %}
+  <form method="POST" id="form" enctype="multipart/form-data">
+    <h1>Uncrap a mask!</h1>
+    {% csrf_token %}
+    <input type="password" name="guess_pass" id="sudo" placeholder="Guess file passphrase" required>
+    <input type="text" name="sel_img" id="sudo" class="sel_img" placeholder="Image selected" required>
+    {% if form.image.errors %}
+      <p><i><strong><small>--- {{form.image.errors}}</small></strong></i></p>
+    {% endif %}
+    <button type="submit">un-crap</button>
+  </form>
+{% endblock form %}
+
+
+{% block result %}
+  <span>
+    <p>Select crap image (target)</p>
+    <br>
+    <select name="" onclick="get_img_val(this)" required>
+      {% for crp in uncraped %}
+        <option value="{{crp.image.url}}">{{crp.image.url}}</option>
+      {% endfor %}
+    </select>
+    <a href="{% url 'account:auth:logout' %}" class="danger">Logout</a>
+    <div class="line"></div>
+  </span>
+{% endblock result %}

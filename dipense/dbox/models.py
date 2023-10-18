@@ -1,5 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
 
 
 class IpPayloadRec(models.Model):
@@ -21,18 +25,11 @@ class NumPayloadRec(models.Model):
     
 
 class CrapSafe(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(default=timezone.now)
     image = models.ImageField(upload_to='crap_safe')
+    name = models.CharField(max_length=1000000)
     is_craped = models.BooleanField(default=False)
     
     def __str__(self):
         return f'This img is craped = {self.is_craped} (safe)'
-    
-
-class CrapUnsafe(models.Model):
-    timestamp = models.DateTimeField(default=timezone.now)
-    image = models.ImageField(upload_to='crap_unsafe')
-    is_craped = models.BooleanField(default=False)
-    
-    def __str__(self):
-        return f'This img is craped = {self.is_craped} (unsafe)'

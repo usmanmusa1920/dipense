@@ -878,6 +878,10 @@ body{
   align-self: center;
 }
 
+.sel_img:focus{
+  visibility: hidden;
+}
+
 .in_div span form button{
   color: white;
   border: none;
@@ -887,6 +891,14 @@ body{
   padding: 5px 15px;
   margin-top: 3px;
   background: linear-gradient(to right, red, black);
+}
+
+.in_div span select{
+  border: none;
+  outline: none;
+  color: white;
+  background: black;
+  padding: 7px;
 }
 
 @media only screen and (max-width: 700px){

@@ -497,6 +497,18 @@ body{
   text-align: center;
 }
 
+.alert_warning{
+  background: lightpink;
+  color: darkred;
+  border-radius: 9px;
+  width: 90%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .long{
   width: 100%;
   min-height: 50px;
@@ -853,7 +865,7 @@ body{
   padding: 3px 0;
 }
 
-.in_div span form input{
+.in_div span form input, #sudo{
   width: 90%;
   height: 40px;
   padding: 5px 10px;

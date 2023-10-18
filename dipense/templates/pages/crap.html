@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+  <title>DiPense | crap mask</title>
+{% endblock title %}
+
+
+{% block form %}
+  <form method="POST" id="form" enctype="multipart/form-data">
+    <h1>Crap a mask!</h1>
+    {% csrf_token %}
+    <input type="file" name="image" accept="image/*" id="id_image" required>
+    <input type="password" name="sudo_pwd" id="sudo" placeholder="Sudo password here ..." required>
+    {% if form.image.errors %}
+      <p><i><strong><small>--- {{form.image.errors}}</small></strong></i></p>
+    {% endif %}
+    <button type="submit">crap</button>
+  </form>
+{% endblock form %}
+
+
+{% block result %}
+  <span>
+    <p>Being me a hacker, my first goal when I want to hack is to gather information enough as I can about my target</p>
+    <br>
+    <a href="{% url 'account:auth:logout' %}" class="danger">Logout</a>
+    <div class="line"></div>
+  </span>
+{% endblock result %}

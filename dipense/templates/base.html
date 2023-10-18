@@ -46,6 +46,7 @@
         <a href="{% url 'account:landing' %}"><p>DiPense</p></a>
         <a href="{% url 'trigger:simtrack' %}"><p>Sim track</p></a>
         <a href="{% url 'trigger:icheckp' %}"><p>i-check-p</p></a>
+        <a href="{% url 'trigger:crap_safe' %}"><p>Crap</p></a>
 
         <h1 class="category">Feed</h1>
         <br>
@@ -111,7 +112,7 @@
           <div class="main_top">
             {% if messages %}
               {% for message in messages %}
-                <div class="alert_success">{{message}}</div>
+                <div class="alert_{{message.tags}}">{{message}}</div>
               {% endfor %}
             {% endif %}
 

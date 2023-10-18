@@ -13,11 +13,20 @@ import psutil
 BASE_DIR = Path(__file__).resolve().parent
 
 
+def auth_sudo(pwd: str = False, req=None):
+    if pwd:
+        p = sp.run(f'echo {pwd} | sudo -S uptime', shell=True)
+        if p.returncode > 0 or p.returncode != 0:
+            messages.warning(
+                req, format_html('Something bad, review sudo credentials, <a href="{}" class="peace">&nbsp;landing</a>', reverse('account:landing')))
+            return redirect(reverse('account:landing'))
+        
+
 def up(*args, pwd: str = False, req=None):
     if pwd:
         p = sp.run(f'echo {pwd} | sudo -S uptime', shell=True)
         if p.returncode > 0 or p.returncode != 0:
-            messages.success(
+            messages.warning(
                 req, format_html('Something bad, review sudo credentials, <a href="{}" class="peace">&nbsp;landing</a>', reverse('account:landing')))
             return redirect(reverse('account:landing'))
     up = sp.run(list(args), capture_output=True, text=True).stdout

@@ -18,3 +18,21 @@ class NumPayloadRec(models.Model):
     
     def __str__(self):
         return 'A search of {} on {}'.format(self.payload_num, self.timestamp)
+    
+
+class CrapSafe(models.Model):
+    timestamp = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to='crap_safe')
+    is_craped = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return f'This img is craped = {self.is_craped} (safe)'
+    
+
+class CrapUnsafe(models.Model):
+    timestamp = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to='crap_unsafe')
+    is_craped = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return f'This img is craped = {self.is_craped} (unsafe)'

@@ -12,7 +12,7 @@
     <h1>Crap a mask!</h1>
     {% csrf_token %}
     <input type="file" name="image" accept="image/*" id="id_image" required>
-    <input type="text" name="secret_file_path" id="sudo" placeholder="Secret file path (/home/user/Desktop/secret.txt)" required>
+    <input type="text" name="secret_file_path" id="sudo" placeholder="Secret file path (/home/user/Desktop/secret.txt)" value="/home/usman/Desktop/fire.sh" required>
     <input type="password" name="file_enc_pwd" id="sudo" placeholder="File passphrase" required>
     <input type="password" name="sudo_pwd" id="sudo" placeholder="Sudo password here ..." required>
     {% if form.image.errors %}

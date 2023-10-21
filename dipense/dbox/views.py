@@ -36,8 +36,8 @@ def stats_view(request):
 @login_required
 def vuln(request):
     messages.warning(
-        request, format_html('Sorry this page <a href="{}" class="peace">&nbsp;vuln&nbsp;</a> is under development', reverse('trigger:vuln')))
-    return redirect('trigger:stats')
+        request, format_html('Sorry this page <a href="{}" class="peace">&nbsp;{}&nbsp;</a> is under development', reverse('trigger:vuln'), 'vuln'))
+    return redirect(reverse('account:landing'))
     context = {
         'None': None,
     }

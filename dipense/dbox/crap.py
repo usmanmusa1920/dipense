@@ -1,28 +1,51 @@
 # -*- coding: utf-8 -*-
 import os
+import shutil
 import secrets
 import subprocess as sp
 from pathlib import Path
+from datetime import datetime
 from django.urls import reverse
 from django.contrib import messages
 from django.utils.html import format_html
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from .default import default
-# apt install steghide -y
-# xdg-open nothing.jpg
-# nano secret.txt
-# steghide embed -cf nothing.jpg -ef secret.txt
-# passwd: *****
-# rm secret.txt
-# ls
-# steghide ectract -sf nothing.jpg
-# passwd: *****
-from .aging import age
 from .models import CrapSafe
 from .forms import SafeImage
 from .stats.base import auth_sudo
 from account.views import picture_name
+
+
+today = datetime.today()
+
+
+def age():
+    for i in os.listdir():
+        if os.path.isfile(i):
+            negators = [
+                'auto.sh',
+                'config.json',
+                'db.sqlite3',
+                'dump.json',
+                'manage.py',
+                'requirements.txt'
+            ]
+            if os.path.basename(i) not in negators:
+                mtime = datetime.fromtimestamp(os.stat(i)[8])
+                filetime = mtime - today
+                if abs(filetime.days) <= 3:
+                    # print(mtime,f" {os.path.basename(i)} older {abs(filetime.days)} days")
+                    # print(mtime.year, mtime.month, mtime.day, mtime.hour, mtime.minute, mtime.second, 'm')
+                    # print(today.year, today.month, today.day, today.hour, today.minute, today.second, 't')
+                    # print()
+                    directory = os.path.join(
+                        Path(__file__).resolve().parent.parent, 'sec')
+                    timestamp = datetime.now()
+                    # move any recent (1 - 3 days) files into sec folder, using shutil.
+                    shutil.move(os.path.basename(i), directory + '/' + os.path.basename(i))
+                else:
+                    os.remove(i)
 
 
 @login_required

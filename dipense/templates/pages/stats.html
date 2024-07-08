@@ -26,7 +26,7 @@
     <br>
     <form action="{% url 'trigger:stats' %}" method="post">
       {% csrf_token %}
-      <p>Make sure to put your real sudo password, else it will hang you</p>
+      <p>Make sure to put your real system sudo password, else it will hang you</p>
       <input type="password" name="sudo_pwd" placeholder="Sudo password here ..." required>
       <button type="submit">sudo</button>
     </form>

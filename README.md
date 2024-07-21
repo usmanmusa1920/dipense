@@ -17,11 +17,9 @@
 An OSINT tool for IT ninjas
 
 [![Downloads Month Badge](https://static.pepy.tech/badge/dipense/month)](https://pypi.org/project/dipense)
-[![Downloads Week Badge](https://static.pepy.tech/badge/dipense/week)](https://pypi.org/project/dipense)
 [![License Badge](https://img.shields.io/pypi/l/dipense.svg)](https://pypi.org/project/dipense)
 [![Supported Wheel Badge](https://img.shields.io/pypi/wheel/dipense.svg)](https://pypi.org/project/dipense)
 [![Supported Versions Badge](https://img.shields.io/pypi/pyversions/dipense.svg)](https://pypi.org/project/dipense)
-[![Contributors](https://img.shields.io/github/contributors/usmanmusa1920/dipense.svg)](https://github.com/usmanmusa1920/dipense/graphs/contributors)
 
 ## Usage:: (local)
 

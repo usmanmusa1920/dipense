@@ -2,105 +2,105 @@
 
 
 {% block title %}
-  <title>DiPense | who-is</title>
+	<title>DiPense | who-is</title>
 {% endblock title %}
 
 
 {% block form %}
-  <h1>Payload domain name</h1>
-  <p>Find information about a domain name, in most cases domains with top level extension (.com, .org, .net, etc) are capture, while others are captured less (.tk, .io, .info, etc)</p>
+	<h1>Payload domain name</h1>
+	<p>Find information about a domain name, in most cases domains with top level extension (.com, .org, .net, etc) are capture, while others are captured less (.tk, .io, .info, etc)</p>
 
-  {% if domain_name %}
-    <a class="map_view">Scroll down to see result</a>
-  {% endif %}
+	{% if domain_name %}
+		<a class="map_view">Scroll down to see result</a>
+	{% endif %}
 
-  <form action="{% url 'trigger:who_is' %}" class="form">
-    <input type="text" name="domain" placeholder="Enter domain name e.g google.com" oninput="searchPlus()" required>
-    <button type="submit">Run payload</button>
-  </form>
+	<form action="{% url 'trigger:who_is' %}" class="form">
+		<input type="text" name="domain" placeholder="Enter domain name e.g google.com" oninput="searchPlus()" required>
+		<button type="submit">Run payload</button>
+	</form>
 {% endblock form %}
 
 
 {% block result %}
-  <span>
-    {% if domain_name %}
-      <p>The result of the ({{domain}}) is:</p>
-      <h3>{{domain}}</h3>
-      <br>
-    {% else %}
-      <a class="danger">Unable to catch ({{domain}}) information</a>
-    {% endif %}
-    
-    {% if domain_name %}
-      <li>Domain name: {{domain_name}}</li>
-    {% endif %}
+	<span>
+		{% if domain_name %}
+			<p>The result of the ({{domain}}) is:</p>
+			<h3>{{domain}}</h3>
+			<br>
+		{% else %}
+			<a class="danger">Unable to catch ({{domain}}) information</a>
+		{% endif %}
+		
+		{% if domain_name %}
+			<li>Domain name: {{domain_name}}</li>
+		{% endif %}
 
-    {% if registrar %}
-      <li>Registrar: {{registrar}}</li>
-    {% endif %}
+		{% if registrar %}
+			<li>Registrar: {{registrar}}</li>
+		{% endif %}
 
-    {% if whois_server %}
-      <li>Whois server: {{whois_server}}</li>
-    {% endif %}
+		{% if whois_server %}
+			<li>Whois server: {{whois_server}}</li>
+		{% endif %}
 
-    {% if referral_url %}
-      <li>Referral url: {{referral_url}}</li>
-    {% endif %}
+		{% if referral_url %}
+			<li>Referral url: {{referral_url}}</li>
+		{% endif %}
 
-    {% if updated_date %}
-      <li>Update date: {{updated_date}}</li>
-    {% endif %}
+		{% if updated_date %}
+			<li>Update date: {{updated_date}}</li>
+		{% endif %}
 
-    {% if creation_date %}
-      <li>Creation date: {{creation_date}}</li>
-    {% endif %}
+		{% if creation_date %}
+			<li>Creation date: {{creation_date}}</li>
+		{% endif %}
 
-    {% if expiration_date %}
-      <li>Expiration date: {{expiration_date}}</li>
-    {% endif %}
+		{% if expiration_date %}
+			<li>Expiration date: {{expiration_date}}</li>
+		{% endif %}
 
-    {% if name_servers %}
-      <li>Name servers: {{name_servers}}</li>
-    {% endif %}
+		{% if name_servers %}
+			<li>Name servers: {{name_servers}}</li>
+		{% endif %}
 
-    {% if status %}
-      <li>Satatus: {{status}}</li>
-    {% endif %}
+		{% if status %}
+			<li>Satatus: {{status}}</li>
+		{% endif %}
 
-    {% if emails %}
-      <li>Emails: {{emails}}</li>
-    {% endif %}
+		{% if emails %}
+			<li>Emails: {{emails}}</li>
+		{% endif %}
 
-    {% if dnssec %}
-      <li>DNSSEC: {{dnssec}}</li>
-    {% endif %}
+		{% if dnssec %}
+			<li>DNSSEC: {{dnssec}}</li>
+		{% endif %}
 
-    {% if name %}
-      <li>Name: {{name}}</li>
-    {% endif %}
+		{% if name %}
+			<li>Name: {{name}}</li>
+		{% endif %}
 
-    {% if org %}
-      <li>Org: {{org}}</li>
-    {% endif %}
+		{% if org %}
+			<li>Org: {{org}}</li>
+		{% endif %}
 
-    {% if address %}
-      <li>Address: {{address}}</li>
-    {% endif %}
+		{% if address %}
+			<li>Address: {{address}}</li>
+		{% endif %}
 
-    {% if city %}
-      <li>City: {{city}}</li>
-    {% endif %}
+		{% if city %}
+			<li>City: {{city}}</li>
+		{% endif %}
 
-    {% if state %}
-      <li>State: {{state}}</li>
-    {% endif %}
+		{% if state %}
+			<li>State: {{state}}</li>
+		{% endif %}
 
-    {% if country %}
-      <li>Country: {{country}}</li>
-    {% endif %}
+		{% if country %}
+			<li>Country: {{country}}</li>
+		{% endif %}
 
-    {% if registrant_postal_code %}
-      <li>Registrant postal code: {{registrant_postal_code}}</li>
-    {% endif %}
-  </span>
+		{% if registrant_postal_code %}
+			<li>Registrant postal code: {{registrant_postal_code}}</li>
+		{% endif %}
+	</span>
 {% endblock result %}

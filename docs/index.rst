@@ -8,21 +8,21 @@ Release v\ |version|
 
 
 .. image:: https://static.pepy.tech/badge/dipense/month
-    :target: https://pepy.tech/project/dipense
-    :alt: DiPense Downloads Per Month Badge
-    
+	:target: https://pepy.tech/project/dipense
+	:alt: DiPense Downloads Per Month Badge
+
 .. image:: https://img.shields.io/pypi/l/dipense.svg
-    :target: https://pypi.org/project/dipense/
-    :alt: License Badge
+	:target: https://pypi.org/project/dipense/
+	:alt: License Badge
 
 .. image:: https://img.shields.io/pypi/wheel/dipense.svg
-    :target: https://pypi.org/project/dipense/
-    :alt: Wheel Support Badge
+	:target: https://pypi.org/project/dipense/
+	:alt: Wheel Support Badge
 
 .. image:: https://img.shields.io/pypi/pyversions/dipense.svg
-    :target: https://pypi.org/project/dipense/
-    :alt: Python Version Support Badge
-    
+	:target: https://pypi.org/project/dipense/
+	:alt: Python Version Support Badge
+
 -------------------
 
 Usage (local)
@@ -30,27 +30,27 @@ Usage (local)
 
 First clone the repository::
 
-    git clone https://github.com/usmanmusa1920/dipense
+	git clone https://github.com/usmanmusa1920/dipense
 
 Enter into the directory, which live in `dipense/dipense`::
 
-    cd dipense/dipense
+	cd dipense/dipense
 
 Create virtual environment::
 
-    python -m venv d_venv
+	python -m venv d_venv
 
 Activate virtual environment::
 
-    source d_venv/bin/activate
+	source d_venv/bin/activate
 
 Install requirements::
 
-    pip install -r requirements.txt
+	pip install -r requirements.txt
 
 Now run the development server by::
 
-    python manage.py runserver
+	python manage.py runserver
 
 Visit the url address `http://localhost:8000`, use the below user credential to login!
 
@@ -60,28 +60,28 @@ Usage (Docker)
 ==============
 
 .. note::
-    
-    The docker version is too old, but soon new will be release!
+		
+	The docker version is too old, but soon new will be release!
 
 To use this tool you have to make sure you have **docker** install as well as **docker-compose**, also make sure you have nothing running on port **8000** and **80** because these ports are going to be use for the services
 
 After that then you are to pull the image from docker with::
 
-    docker pull usmanmusa/dipense
+	docker pull usmanmusa/dipense
 
 Next you are to clone the github repo of the project::
 
-    git clone https://github.com/usmanmusa1920/dipense.git
+	git clone https://github.com/usmanmusa1920/dipense.git
 
 in other to get the **docker-compose.yml**
 
 Now cd into the project folder you just clone to spin up the services using the command::
 
-    docker-compose up
+	docker-compose up
 
 you can use::
-    
-    docker-compose up --build
+		
+	docker-compose up --build
 
 in other to see how it build the image
 
@@ -93,7 +93,7 @@ Look around
 
 You can install dipense from pypi using::
 
-    pip install --upgrade dipense
+	pip install --upgrade dipense
 
 see `more <https://dipense-lib.readthedocs.io>`_ on how to use it
 
@@ -116,9 +116,9 @@ DiPense (PyPi)
 --------------
 
 .. toctree::
-  :maxdepth: 2
+	:maxdepth: 2
 
-  library/index
+	library/index
 
 
 Useful links:
@@ -134,12 +134,12 @@ DiPense at a glance (docker)
 ============================
 
 .. image:: _static/screen-shot.png
-  :width: 400
-  :alt: Alternative text
+	:width: 400
+	:alt: Alternative text
 
 DiPense at a glance (pypi)
 ==========================
 
 .. image:: _static/dipense-terminal.png
-  :width: 400
-  :alt: Alternative text
+	:width: 400
+	:alt: Alternative text

@@ -10,35 +10,35 @@ from .stats.base import up, stats, sys_proc
 
 @login_required
 def stats_view(request):
-    if request.method == 'POST':
-        pwd = request.POST['sudo_pwd']
-        
-        u = up('uptime', '-p', pwd=pwd, req=request)
-        s1 = stats('sysinfo', pwd=pwd, req=request)
-        s2 = stats('baby')
-        context = {
-            'uptime': u,
-            'sysinfo': s1,
-            'baby': s2,
-            'sys_proc': sys_proc(),
-            # 'uptime': up('uptime'),
-            'default': default()
-        }
-    else:
-        context = {
-            'baby': stats('baby'),
-            'sys_proc': sys_proc(),
-            'default': default()
-        }
-    return render(request, 'pages/stats.html', context)
+	if request.method == 'POST':
+		pwd = request.POST['sudo_pwd']
+		
+		u = up('uptime', '-p', pwd=pwd, req=request)
+		s1 = stats('sysinfo', pwd=pwd, req=request)
+		s2 = stats('baby')
+		context = {
+			'uptime': u,
+			'sysinfo': s1,
+			'baby': s2,
+			'sys_proc': sys_proc(),
+			# 'uptime': up('uptime'),
+			'default': default()
+		}
+	else:
+		context = {
+			'baby': stats('baby'),
+			'sys_proc': sys_proc(),
+			'default': default()
+		}
+	return render(request, 'pages/stats.html', context)
 
 
 @login_required
 def vuln(request):
-    messages.warning(
-        request, format_html('Sorry this page <a href="{}" class="peace">&nbsp;{}&nbsp;</a> is under development', reverse('trigger:vuln'), 'vuln'))
-    return redirect(reverse('account:landing'))
-    context = {
-        'None': None,
-    }
-    return render(request, 'pages/vuln.html', context)
+	messages.warning(
+		request, format_html('Sorry this page <a href="{}" class="peace">&nbsp;{}&nbsp;</a> is under development', reverse('trigger:vuln'), 'vuln'))
+	return redirect(reverse('account:landing'))
+	context = {
+		'None': None,
+	}
+	return render(request, 'pages/vuln.html', context)

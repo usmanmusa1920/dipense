@@ -6,5 +6,5 @@ User = get_user_model()
 
 
 class PasswordChangeForm(PasswordChangeForm):
-    class Meta:
-        model = User
+	class Meta:
+		model = User

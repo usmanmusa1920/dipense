@@ -8,28 +8,28 @@ who
 echo
 
 report_uptime () {
-    # This report system up time of running
-    echo -n "Report up time: "
-    echo
-    uptime
-    return
+	# This report system up time of running
+	echo -n "Report up time: "
+	echo
+	uptime
+	return
 }
 
 report_disk_space () {
-    # Function for showing system disk space
-    echo -n "Report disk: "
-    echo
-    df -h
-    return
+	# Function for showing system disk space
+	echo -n "Report disk: "
+	echo
+	df -h
+	return
 }
 
 report_home_space () {
-    # This function display system usage for home dir
-    echo -n "Report home: "
-    echo
-    du -sh $HOME # or
-    # du -sh /home/*
-    return
+	# This function display system usage for home dir
+	echo -n "Report home: "
+	echo
+	du -sh $HOME # or
+	# du -sh /home/*
+	return
 }
 
 report_uptime
@@ -56,19 +56,19 @@ echo
 
 
 if [ "$1" == "baby" ]; then
-    if [ -f "baby.sh" ]; then
-        . baby.sh
-    else
-        echo
-    fi
+	if [ -f "baby.sh" ]; then
+		. baby.sh
+	else
+		echo
+	fi
 elif [ "$1" == "html" ]; then
-    if [ -f "html.sh" ]; then
-        . html.sh
-    else
-        echo
-    fi
+	if [ -f "html.sh" ]; then
+		. html.sh
+	else
+		echo
+	fi
 elif [ "$1" == "em" ]; then
-    echo
+	echo
 else
-    echo "Failed to run file specified ($1)."
+	echo "Failed to run file specified ($1)."
 fi

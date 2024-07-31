@@ -2,29 +2,29 @@
 
 
 {% block title %}
-  <title>DiPense | logout</title>
+	<title>DiPense | logout</title>
 {% endblock title %}
 
 
 {% block form %}
-  <h1>You are out!</h1>
-  <p>You are out of the great community of hackers gurus and <b>IT ninjas</b>, please come back now into your lab, you will have a chance of winning an ocean of coffee</p>
+	<h1>You are out!</h1>
+	<p>You are out of the great community of hackers gurus and <b>IT ninjas</b>, please come back now into your lab, you will have a chance of winning an ocean of coffee</p>
 
-  <h1>
-    <a href="{% url 'account:auth:login' %}" class="peace">login</a>
-    OR <a href="{% url 'account:signup' %}" class="peace">signup</a>
-  </h1>
-  <h1>we want you back now!</h1>
+	<h1>
+		<a href="{% url 'account:auth:login' %}" class="peace">login</a>
+		OR <a href="{% url 'account:signup' %}" class="peace">signup</a>
+	</h1>
+	<h1>we want you back now!</h1>
 {% endblock form %}
 
 
 {% block result %}
-  <span>
-    <p>Use strong password for your lab!</p>
-    <br>
-    <h3>Passwords level:</h3>
-    <li>Weak: my-dipense-lab</li>
-    <li>Poor: my-dipense-lab-123</li>
-    <li>Strong: my-dipense-lab-+@$*5b96ffe3d3b34fba1afa03ab35847b</li>
-  </span>
+	<span>
+		<p>Use strong password for your lab!</p>
+		<br>
+		<h3>Passwords level:</h3>
+		<li>Weak: my-dipense-lab</li>
+		<li>Poor: my-dipense-lab-123</li>
+		<li>Strong: my-dipense-lab-+@$*5b96ffe3d3b34fba1afa03ab35847b</li>
+	</span>
 {% endblock result %}

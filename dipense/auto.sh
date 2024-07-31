@@ -11,7 +11,7 @@ User = get_user_model()
 
 
 root_user = User.objects.create_superuser(
-    first_name='Ninja', last_name='Robot', username='mr-robot', email='mr_robot@mail.com', password='root1234')
+	first_name='Ninja', last_name='Robot', username='mr-robot', email='mr_robot@mail.com', password='root1234')
 root_user.save()
 
 

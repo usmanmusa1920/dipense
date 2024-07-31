@@ -1,48 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block title %}
-  <title>DiPense | vuln</title>
+	<title>DiPense | vuln</title>
 {% endblock title %}
 
 
 {% block form %}
-  <form id="form">
-    <input type="text" name="name" placeholder="Vuln type" required>
-    <textarea name="feedback" placeholder="Any (optional)" required></textarea>
-    <button type="submit">Trigger</button>
-  </form>
+	<form id="form">
+		<input type="text" name="name" placeholder="Vuln type" required>
+		<textarea name="feedback" placeholder="Any (optional)" required></textarea>
+		<button type="submit">Trigger</button>
+	</form>
 {% endblock form %}
 
 
 {% block result %}
-  <span>
-    <p>Being me a hacker, my first goal when I want to hack is to gather information enough as I can about my target</p>
-    <br>
+	<span>
+		<p>Being me a hacker, my first goal when I want to hack is to gather information enough as I can about my target</p>
+		<br>
 
-    <h3>Status: loading</h3>
-    <br>
-    <form>
-      {% csrf_token %}
-      <p>Make sure to put your real sudo password, else it will hang you</p>
-      <input type="password" name="sudo_pwd" placeholder="Sudo password here ..." required>
-      <button type="submit">sudo</button>
-    </form>
-    <br>
-    <a href="{% url 'account:auth:logout' %}" class="danger">Logout</a>
-    <div class="line"></div>
-    {% if uptime %}
-      <li><b>Uptime:</b> {{uptime}}</li>
-      <div class="line"></div>
-    {% endif %}
-    
-    {% if sysinfo %}
-      <li>
-        <b>Stats:</b>
-        <pre>{{sysinfo}}
-        </pre>
-      </li>
-      <div class="line"></div>
-    {% endif %}
-  </span>
+		<h3>Status: loading</h3>
+		<br>
+		<form>
+			{% csrf_token %}
+			<p>Make sure to put your real sudo password, else it will hang you</p>
+			<input type="password" name="sudo_pwd" placeholder="Sudo password here ..." required>
+			<button type="submit">sudo</button>
+		</form>
+		<br>
+		<a href="{% url 'account:auth:logout' %}" class="danger">Logout</a>
+		<div class="line"></div>
+		{% if uptime %}
+			<li><b>Uptime:</b> {{uptime}}</li>
+			<div class="line"></div>
+		{% endif %}
+		
+		{% if sysinfo %}
+			<li>
+				<b>Stats:</b>
+				<pre>{{sysinfo}}
+				</pre>
+			</li>
+			<div class="line"></div>
+		{% endif %}
+	</span>
 {% endblock result %}

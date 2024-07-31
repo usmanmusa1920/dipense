@@ -18,38 +18,38 @@ User = get_user_model()
 class GEO(ICHECKP): ...
 class SMTK(STRACK): ...
 class WH(WH):
-    def coming(request, pg):
-        messages.warning(
-            request, format_html('Sorry this page <a href="{}" class="peace">&nbsp;{}&nbsp;</a> is under development', request.path_info, pg))
-        return redirect(reverse('account:landing'))
-    
-    @overload
-    def _que(self, val: int) -> int: ...
-    def _que(self, val: float) -> float: ...
-    def _que(self, val: str) -> str: ...
-    def _que(self, val: bytes) -> bytes: ...
-    def _que(self, val: None) -> None: ...
+	def coming(request, pg):
+		messages.warning(
+			request, format_html('Sorry this page <a href="{}" class="peace">&nbsp;{}&nbsp;</a> is under development', request.path_info, pg))
+		return redirect(reverse('account:landing'))
+		
+	@overload
+	def _que(self, val: int) -> int: ...
+	def _que(self, val: float) -> float: ...
+	def _que(self, val: str) -> str: ...
+	def _que(self, val: bytes) -> bytes: ...
+	def _que(self, val: None) -> None: ...
 	
 
 class Danger(metaclass=ABCMeta):
-    @abstractmethod
-    def danger_up(self): ...
-    @abstractmethod
-    def danger_down(self): ...
-    @abstractmethod
-    def danger_left(self): ...
-    @abstractmethod
-    def danger_right(self): ...
+	@abstractmethod
+	def danger_up(self): ...
+	@abstractmethod
+	def danger_down(self): ...
+	@abstractmethod
+	def danger_left(self): ...
+	@abstractmethod
+	def danger_right(self): ...
 
 class Chaos(Danger):
-    def danger_up(self):
-        return 'Danger up'
-    def danger_down(self):
-        return 'Danger down'
-    def danger_left(self):
-        return 'Danger left'
-    def danger_right(self):
-        return 'Danger right'
-    
+	def danger_up(self):
+		return 'Danger up'
+	def danger_down(self):
+		return 'Danger down'
+	def danger_left(self):
+		return 'Danger left'
+	def danger_right(self):
+		return 'Danger right'
+		
 # ch = Chaos()
 # print(ch.abstractName())

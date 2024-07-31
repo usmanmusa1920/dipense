@@ -1,209 +1,208 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="{% static 'media/favicon.ico' %}" type="image/x-icon">
-  <link rel="stylesheet" href="{% static 'base.css' %}">
-  <script src="{% static 'js/base.js' %}"></script>
-  {% block title %}
-    <!-- page title here -->
-  {% endblock title %}
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="{% static 'media/favicon.ico' %}" type="image/x-icon">
+		<link rel="stylesheet" href="{% static 'base.css' %}">
+		<script src="{% static 'js/base.js' %}"></script>
+		{% block title %}
+			<!-- page title here -->
+		{% endblock title %}
+	</head>
 
-<body>
-  <div class="container">
-    <div class="left">
-      <div class="d_links">
-        <h1 class="dash">
-          <span>Dash board</span>
-        </h1>
-        <span class="close" onclick="setTimeout(hideMenu, 300)">
-          <span>>>></span>
-          <span>&times;</span>
-          <span><<<</span>
-        </span>
+	<body>
+		<div class="container">
+			<div class="left">
+				<div class="d_links">
+					<h1 class="dash">
+						<span>Dash board</span>
+					</h1>
+					<span class="close" onclick="setTimeout(hideMenu, 300)">
+						<span>>>></span>
+						<span>&times;</span>
+						<span><<<</span>
+					</span>
 
-        <span class="anony">
-          <div class="anonymous">
-            <div>
-              {% if request.user.is_authenticated %}
-                <img src="{{request.user.image.url}}" alt="" srcset="">
-              {% else %}
-                <img src="{% static 'media/anonymous.jpg' %}" alt="" srcset="">
-              {% endif %}
-            </div>
-          </div>
-          {% if request.user.is_authenticated %}
-            <a href="{% url 'account:profile' %}">{{request.user.first_name}} {{request.user.last_name}}</a>
-          {% else %}
-            <a href="{% url 'account:profile' %}">Anonymous User</a>
-          {% endif %}
-        </span>
+					<span class="anony">
+						<div class="anonymous">
+							<div>
+								{% if request.user.is_authenticated %}
+									<img src="{{request.user.image.url}}" alt="" srcset="">
+								{% else %}
+									<img src="{% static 'media/anonymous.jpg' %}" alt="" srcset="">
+								{% endif %}
+							</div>
+						</div>
+						{% if request.user.is_authenticated %}
+							<a href="{% url 'account:profile' %}">{{request.user.first_name}} {{request.user.last_name}}</a>
+						{% else %}
+							<a href="{% url 'account:profile' %}">Anonymous User</a>
+						{% endif %}
+					</span>
 
-        <a href="{% url 'account:landing' %}"><p>DiPense</p></a>
-        <a href="{% url 'trigger:simtrack' %}"><p>Sim track</p></a>
-        <a href="{% url 'trigger:icheckp' %}"><p>i-check-p</p></a>
-        <a href="{% url 'trigger:crap_safe' %}"><p>Crap</p></a>
-        <a href="{% url 'trigger:crap_unsafe' %}"><p>Un-Crap</p></a>
+					<a href="{% url 'account:landing' %}"><p>DiPense</p></a>
+					<a href="{% url 'trigger:simtrack' %}"><p>Sim track</p></a>
+					<a href="{% url 'trigger:icheckp' %}"><p>i-check-p</p></a>
+					<a href="{% url 'trigger:crap_safe' %}"><p>Crap</p></a>
+					<a href="{% url 'trigger:crap_unsafe' %}"><p>Un-Crap</p></a>
 
-        <h1 class="category">Feed</h1>
-        <br>
-        <a href="{% url 'account:about' %}"><p>About</p></a>
-        <a href="{% url 'account:contact' %}"><p>Contact Us</p></a>
+					<h1 class="category">Feed</h1>
+					<br>
+					<a href="{% url 'account:about' %}"><p>About</p></a>
+					<a href="{% url 'account:contact' %}"><p>Contact Us</p></a>
 
-        <h1 class="category">Auth</h1>
-        <br>
-        {% if request.user.is_authenticated %}
-          {% if request.user.is_superuser == True %}
-            <a href="/admin"><p>Admin</p></a>
-          {% endif %}
-          <a href="{% url 'account:auth:change_password' %}"><p>Change password</p></a>
-          <a href="{% url 'account:auth:logout' %}"><p>Logout</p></a>
-        {% else %}
-          <a href="{% url 'account:auth:login' %}"><p>Login</p></a>
-        {% endif %}
+					<h1 class="category">Auth</h1>
+					<br>
+					{% if request.user.is_authenticated %}
+						{% if request.user.is_superuser == True %}
+							<a href="/admin"><p>Admin</p></a>
+						{% endif %}
+						<a href="{% url 'account:auth:change_password' %}"><p>Change password</p></a>
+						<a href="{% url 'account:auth:logout' %}"><p>Logout</p></a>
+					{% else %}
+						<a href="{% url 'account:auth:login' %}"><p>Login</p></a>
+					{% endif %}
 
-        <div class="bot_1">
-          <div>
-            <b>25%</b>
-          </div>
-          <button>Malware</button>
-        </div>
+					<div class="bot_1">
+						<div>
+							<b>25%</b>
+						</div>
+						<button>Malware</button>
+					</div>
 
-        <div class="bot_2">
-          <div>
-            <b>75%</b>
-          </div>
-          <button>Threats</button>
-        </div>
+					<div class="bot_2">
+						<div>
+							<b>75%</b>
+						</div>
+						<button>Threats</button>
+					</div>
 
-        <p class="foot">&copy; {{default.the_year}} DiPense</p>
-        <p class="foot"><a href="https://usmanmusa1920.github.io" target="_blank"  class="powered">Designed & Developed</a></p>
-        <br>
-      </div>
-    </div>
+					<p class="foot">&copy; {{default.the_year}} DiPense</p>
+					<p class="foot"><a href="https://usmanmusa1920.github.io" target="_blank"	class="powered">Designed & Developed</a></p>
+					<br>
+				</div>
+			</div>
 
-    <div class="right">
-      <div class="header">
-        <div class="header_column">
+			<div class="right">
+				<div class="header">
+					<div class="header_column">
 
-          <div class="header_left">
-            <a onclick="setTimeout(showMenu, 300)">
-              <h1 class="showmenu">
-                <span>D</span>
-              </h1>
-            </a>
-            <a href="{% url 'account:landing' %}">
-              <h1 class="logo">
-                iPense
-              </h1>
-            </a>
-          </div>
+						<div class="header_left">
+							<a onclick="setTimeout(showMenu, 300)">
+								<h1 class="showmenu">
+									<span>D</span>
+								</h1>
+							</a>
+							<a href="{% url 'account:landing' %}">
+								<h1 class="logo">
+									iPense
+								</h1>
+							</a>
+						</div>
 
-          <div class="header_right">
-            <a href="{% url 'account:about' %}"><h4>About</h4></a>
-          </div>
-        </div>
-      </div>
+						<div class="header_right">
+							<a href="{% url 'account:about' %}"><h4>About</h4></a>
+						</div>
+					</div>
+				</div>
 
-      <div class="main">
-        <div class="main_column">
-          
-          <div class="main_top">
-            {% if messages %}
-              {% for message in messages %}
-                <div class="alert_{{message.tags}}">{{message}}</div>
-              {% endfor %}
-            {% endif %}
+				<div class="main">
+					<div class="main_column">
+						
+						<div class="main_top">
+							{% if messages %}
+								{% for message in messages %}
+									<div class="alert_{{message.tags}}">{{message}}</div>
+								{% endfor %}
+							{% endif %}
 
-            <div class="long">
-              <a href="{% url 'trigger:stats' %}">
-                <img src="{% static 'media/verified.png' %}" alt="" srcset="">
-                Stats
-              </a>
-              <a href="{% url 'trigger:who_is' %}">
-                Who is
-              </a>
-              <a href="{% url 'trigger:vuln' %}">
-                <img src="{% static 'media/link.png' %}" alt="" srcset="">
-                vuln
-              </a>
-              <a href="{% url 'trigger:coming' 'preference' %}">
-                preference
-              </a>
-              {% if request.user.is_authenticated %}
-                <a href="{% url 'account:auth:logout' %}">
-                  <img src="{% static 'media/logout.png' %}" alt="" srcset="">
-                  logout
-                </a>
-              {% else %}
-                <a href="{% url 'account:auth:login' %}">
-                  login
-                </a>
-                <a href="{% url 'account:signup' %}">
-                  signup
-                </a>
-              {% endif %}
-            </div>
+							<div class="long">
+								<a href="{% url 'trigger:stats' %}">
+									<img src="{% static 'media/verified.png' %}" alt="" srcset="">
+									Stats
+								</a>
+								<a href="{% url 'trigger:who_is' %}">
+									Who is
+								</a>
+								<a href="{% url 'trigger:vuln' %}">
+									<img src="{% static 'media/link.png' %}" alt="" srcset="">
+									vuln
+								</a>
+								<a href="{% url 'trigger:coming' 'preference' %}">
+									preference
+								</a>
+								{% if request.user.is_authenticated %}
+									<a href="{% url 'account:auth:logout' %}">
+										<img src="{% static 'media/logout.png' %}" alt="" srcset="">
+										logout
+									</a>
+								{% else %}
+									<a href="{% url 'account:auth:login' %}">
+										login
+									</a>
+									<a href="{% url 'account:signup' %}">
+										signup
+									</a>
+								{% endif %}
+							</div>
 
-            <div class="two">
-              <div class="two_1">
-                <div class="cntr">
-                  <div class="circle"></div>
-                  <p class="scan">scanning</p>
-                  <div class="pointer-cntr">
-                    <span class="pointer">payload</span>
-                  </div>
-                  <div class="gradient-circle"></div>
-                </div>
-              </div>
+							<div class="two">
+								<div class="two_1">
+									<div class="cntr">
+										<div class="circle"></div>
+										<p class="scan">scanning</p>
+										<div class="pointer-cntr">
+											<span class="pointer">payload</span>
+										</div>
+										<div class="gradient-circle"></div>
+									</div>
+								</div>
 
-              <div class="two_2">
-                {% block form %}
-                  <!-- inheritance -->
-                {% endblock form %}
-              </div>
-            </div>
+								<div class="two_2">
+									{% block form %}
+										<!-- inheritance -->
+									{% endblock form %}
+								</div>
+							</div>
 
-            <div class="bold">
-              <span>
-                <a href="{% url 'trigger:coming' 'security' %}" class="b_a">
-                  <img src="{% static 'media/pad_lock.jpg' %}" alt="" srcset="">
-                  security
-                </a>
-                <a href="{% url 'trigger:coming' 'system' %}" class="b_a">
-                  system
-                </a>
-                <a href="{% url 'trigger:coming' 'info' %}" class="b_a">
-                  info
-                </a>
-                <a href="{% url 'trigger:coming' 'vendor' %}" class="b_a">
-                  vendor
-                </a>
-              </span>
+							<div class="bold">
+								<span>
+									<a href="{% url 'trigger:coming' 'security' %}" class="b_a">
+										<img src="{% static 'media/pad_lock.jpg' %}" alt="" srcset="">
+										security
+									</a>
+									<a href="{% url 'trigger:coming' 'system' %}" class="b_a">
+										system
+									</a>
+									<a href="{% url 'trigger:coming' 'info' %}" class="b_a">
+										info
+									</a>
+									<a href="{% url 'trigger:coming' 'vendor' %}" class="b_a">
+										vendor
+									</a>
+								</span>
 
-              <div class="in_div">
-                {% block result %}
-                  <!-- result here -->
-                {% endblock result %}
+								<div class="in_div">
+									{% block result %}
+										<!-- result here -->
+									{% endblock result %}
 
-                <p  class="tell">Indeed you hack the <b>person</b> that you want, when you gather information as much as you can, to use it against your target by the use of OSINT tools provided here in <b>DiPense</b></p>
-              </div>
-              
-              <div class="in_line">
-                <a href="{% url 'trigger:coming' 'Hole' %}" class="b_a">Hole</a>
-                <a href="{% url 'trigger:coming' 'Settings' %}" class="b_a">Settings</a>
-              </div>
-            </div>
-          </div>
+									<p	class="tell">Indeed you hack the <b>person</b> that you want, when you gather information as much as you can, to use it against your target by the use of OSINT tools provided here in <b>DiPense</b></p>
+								</div>
+								
+								<div class="in_line">
+									<a href="{% url 'trigger:coming' 'Hole' %}" class="b_a">Hole</a>
+									<a href="{% url 'trigger:coming' 'Settings' %}" class="b_a">Settings</a>
+								</div>
+							</div>
+						</div>
 
-        </div>
-      </div>
-    </div>
-
-  </div>
-</body>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
